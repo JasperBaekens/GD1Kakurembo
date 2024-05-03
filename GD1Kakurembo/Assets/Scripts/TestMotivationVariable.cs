@@ -1,31 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TestMotivationVariable : MonoBehaviour
 {
+    public const float motivationMax = 10;
+    public const float motivationMin = 0;
 
-    [Range(0,10)] public int motivationAmount = 2;
+    public float currentMotivationAmount; 
+    public Image motivationBar; //needed to change the fill based on motivation percentage
 
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("w") && motivationAmount < 10)
+        if (Input.GetKeyDown("w") && currentMotivationAmount < motivationMax) //if motivationbar not full increases current motivation by one
         {
-            motivationAmount++;
+            currentMotivationAmount++;
         }
-        if (Input.GetKeyDown("s") && motivationAmount > 0)
+        if (Input.GetKeyDown("s") && currentMotivationAmount > motivationMin) //if motivationbar not empty deccreases current motivation by one
         {
-            motivationAmount--;
+            currentMotivationAmount--;
         }
 
+        //updates motivationbar visual on ui
+        motivationBar.fillAmount = currentMotivationAmount / motivationMax;
     }
 }
