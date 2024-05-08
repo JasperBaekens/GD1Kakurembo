@@ -745,8 +745,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1395238730}
-  - component: {fileID: 1395238731}
   - component: {fileID: 1395238732}
+  - component: {fileID: 1395238731}
   m_Layer: 0
   m_Name: SelectionTool
   m_TagString: Untagged
@@ -778,13 +778,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1395238729}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd00e7cf288c5974cab2f976a81c12a1, type: 3}
+  m_Script: {fileID: 11500000, guid: 9913f315510206c45a3043c4d83fd1ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clickedObject: {fileID: 0}
-  materialHighlightClicked: {fileID: 2100000, guid: bb7ec42f1c65740469f59aacf45a86fa, type: 2}
-  materialHighlightClickedBefore: {fileID: 0}
-  characterTag: Characters
+  currentTile: {fileID: 0}
+  aimingTile: {fileID: 0}
+  tileTag: Tile
 --- !u!114 &1395238732
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -794,12 +793,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1395238729}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e14b4a725cd22034c9098355e023de3d, type: 3}
+  m_Script: {fileID: 11500000, guid: 678ec317256b3ff419668b414cf78be2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentTile: {fileID: 0}
-  aimingTile: {fileID: 0}
-  tileTag: Tile
+  clickedObject: {fileID: 0}
+  materialHighlightClicked: {fileID: 2100000, guid: aef0c5037c944b04a93d3b40a750eeb2, type: 2}
+  materialHighlightClickedBefore: {fileID: 0}
+  characterTag: Characters
 --- !u!1 &1722393957 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2872535741915781866, guid: 0a0caaf3f9a0c2e47bbd462e1292a8b2, type: 3}
