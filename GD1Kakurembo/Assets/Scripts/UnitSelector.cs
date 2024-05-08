@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 
@@ -16,15 +17,40 @@ public class UnitSelector : MonoBehaviour
     public GameObject clickedObject; //the current selected object clicked on
     public Material materialHighlightClicked;
     public Material materialHighlightClickedBefore;
-
+    public string characterTag;
 
     // Update is called once per frame
     void Update()
     {
         HoverHighlight();
+        SelectHighLight();
     }
 
-    private void HoverHighlight()
+    private void SelectHighLight()
+    {
+        Ray r = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+
+        if (Physics.Raycast(r, out hit))
+        { //IF we have hit something
+            if (Input.GetMouseButtonDown(0) && clickedObject != null && clickedObject == hit.transform.gameObject)
+            {
+                clickedObject.GetComponent<MeshRenderer>().material = materialHighlightClickedBefore;
+                clickedObject = null;
+            }
+
+            else if (Input.GetMouseButtonDown(0) && clickedObject != hit.transform.gameObject && clickedObject == null && hit.transform.gameObject.CompareTag(characterTag))
+            {
+                HoverRestoreCurrentObject();
+                clickedObject = hit.transform.gameObject;
+                materialHighlightClickedBefore = clickedObject.GetComponent<MeshRenderer>().material;
+                clickedObject.GetComponent<MeshRenderer>().material = materialHighlightClicked;
+            }
+        }
+    }
+
+
+        private void HoverHighlight()
     {
         Ray r = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
@@ -42,23 +68,6 @@ public class UnitSelector : MonoBehaviour
                 currentObject = hit.transform.gameObject; //save the new object
                 HoverHighlightCurrentObject(); //and highlight it
             }
-
-
-
-            if (Input.GetMouseButtonDown(0) && clickedObject != null && clickedObject == currentObject)
-            {
-                clickedObject.GetComponent<MeshRenderer>().material = materialHighlightClickedBefore;
-                clickedObject = null;
-            }
-            else if (Input.GetMouseButtonDown(0) && currentObject != null && clickedObject != currentObject && clickedObject == null)
-            {
-                HoverRestoreCurrentObjectBeforeClick();
-                clickedObject = currentObject;
-                materialHighlightClickedBefore = clickedObject.GetComponent<MeshRenderer>().material;
-                clickedObject.GetComponent<MeshRenderer>().material = materialHighlightClicked;
-            }
-
-
         }
         else //ELSE no object was hit
         {
@@ -71,10 +80,9 @@ public class UnitSelector : MonoBehaviour
     {
         if (currentObject != clickedObject)
         {
-            Renderer r = currentObject.GetComponent(typeof(Renderer)) as Renderer;
-            oldColor = r.material.GetColor("_Color");
+            oldColor = currentObject.GetComponent<MeshRenderer>().material.GetColor("_Color");
             Color newColor = new Color(oldColor.r + highlightFactor, oldColor.g + highlightFactor, oldColor.b + highlightFactor, oldColor.a);
-            r.material.SetColor("_Color", newColor);
+            currentObject.GetComponent<MeshRenderer>().material.SetColor("_Color", newColor);
         }
     }
 
@@ -83,16 +91,9 @@ public class UnitSelector : MonoBehaviour
     {
         if (currentObject != null && currentObject != clickedObject)
         { //IF we actually have an object to restore
-            Renderer r = currentObject.GetComponent(typeof(Renderer)) as Renderer;
-            r.material.SetColor("_Color", oldColor);
+            currentObject.GetComponent<MeshRenderer>().material.SetColor("_Color", oldColor);
             currentObject = null;
         }
     }
-    private void HoverRestoreCurrentObjectBeforeClick()
-    {
-        Renderer r = currentObject.GetComponent(typeof(Renderer)) as Renderer;
-        r.material.SetColor("_Color", oldColor);
-    }
-
 }
 
