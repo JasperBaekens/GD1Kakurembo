@@ -15,11 +15,11 @@ public class TestMotivationVariable : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("w") && currentMotivationAmount < motivationMax) //if motivationbar not full increases current motivation by one
+        if (Input.GetKeyDown("o") && currentMotivationAmount < motivationMax) //if motivationbar not full increases current motivation by one
         {
             currentMotivationAmount++;
         }
-        if (Input.GetKeyDown("s") && currentMotivationAmount > motivationMin) //if motivationbar not empty deccreases current motivation by one
+        if (Input.GetKeyDown("p") && currentMotivationAmount > motivationMin) //if motivationbar not empty deccreases current motivation by one
         {
             currentMotivationAmount--;
         }
