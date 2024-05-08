@@ -4934,8 +4934,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 546999981}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalRotation: {x: 0.17275085, y: 0.6857499, z: -0.1727589, w: 0.68560827}
+  m_LocalPosition: {x: -1.9746184, y: 2.697591, z: 1.7605853}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7691,7 +7691,6 @@ GameObject:
   - component: {fileID: 790508788}
   - component: {fileID: 790508787}
   - component: {fileID: 790508786}
-  - component: {fileID: 790508790}
   m_Layer: 0
   m_Name: Character_Jasper
   m_TagString: Untagged
@@ -7740,7 +7739,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 08c9ce49391148b41907584cc776463d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7785,18 +7784,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &790508790
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 790508785}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b6f9e9523c35d114d8032add5206a2d8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &790793095
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12710,6 +12697,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1395238730}
+  - component: {fileID: 1395238731}
   m_Layer: 0
   m_Name: SelectionTool
   m_TagString: Untagged
@@ -12732,6 +12720,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1395238731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1395238729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdfaf75f36583cf48a7ed52c8f840624, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clickedObject: {fileID: 0}
+  materialHighlightClicked: {fileID: 2100000, guid: 1a25e40fee9cdde45a66eb5b018b914b, type: 2}
+  materialHighlightClickedBefore: {fileID: 0}
 --- !u!1001 &1396338554
 PrefabInstance:
   m_ObjectHideFlags: 0
