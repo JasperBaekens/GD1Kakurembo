@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8530607306708978450}
   m_Layer: 0
-  m_Name: BaseTileVillage
+  m_Name: VillageTile
   m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
