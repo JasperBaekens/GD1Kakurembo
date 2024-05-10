@@ -20,7 +20,8 @@ public class TileProperties : MonoBehaviour
 
         foreach (Renderer r in GetComponentsInChildren<Renderer>())
         {
-            r.material = tileMaterial;
+            if (r.gameObject.CompareTag("Base"))
+                r.material = tileMaterial;
         }
     }
 }
