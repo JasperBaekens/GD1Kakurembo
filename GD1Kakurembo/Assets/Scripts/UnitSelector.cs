@@ -9,9 +9,8 @@ public class UnitSelector : MonoBehaviour
 {
     private GameObject currentObject; //The currently highlighted object
     private Color oldColor; //The old color of the currentObject
-    private Material materialBeforeHighlight;
 
-
+    private bool DeClickHappened = false;
 
     private float highlightFactor = 0.3f; //How much should the object be highlighted
     public GameObject clickedObject; //the current selected object clicked on
@@ -37,6 +36,7 @@ public class UnitSelector : MonoBehaviour
             {
                 clickedObject.GetComponent<MeshRenderer>().material = materialHighlightClickedBefore;
                 clickedObject = null;
+                DeClickHappened = true;
             }
 
             else if (Input.GetMouseButtonDown(0) && clickedObject != hit.transform.gameObject && clickedObject == null && hit.transform.gameObject.CompareTag(characterTag))
@@ -45,12 +45,13 @@ public class UnitSelector : MonoBehaviour
                 clickedObject = hit.transform.gameObject;
                 materialHighlightClickedBefore = clickedObject.GetComponent<MeshRenderer>().material;
                 clickedObject.GetComponent<MeshRenderer>().material = materialHighlightClicked;
+                DeClickHappened = false;
             }
         }
     }
 
 
-        private void HoverHighlight()
+    private void HoverHighlight()
     {
         Ray r = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
@@ -89,11 +90,12 @@ public class UnitSelector : MonoBehaviour
     //Restores the current object to it's former state.
     private void HoverRestoreCurrentObject()
     {
-        if (currentObject != null && currentObject != clickedObject)
+        if (currentObject != null && currentObject != clickedObject && !DeClickHappened)
         { //IF we actually have an object to restore
             currentObject.GetComponent<MeshRenderer>().material.SetColor("_Color", oldColor);
             currentObject = null;
         }
+        DeClickHappened = false;
     }
 }
 
