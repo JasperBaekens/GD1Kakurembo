@@ -7,6 +7,18 @@ public class TileProperties : MonoBehaviour
     private Material tileMaterial;
     private Renderer tileRenderer;
 
+    public TileType tileType;
+    public enum TileType
+    {
+        BaseTile,
+        WaterTile,
+        ForestTile,
+        VillageTile,
+        RoadTile
+    }
+
+
+
     private void Awake()
     {
         tileRenderer = GetComponent(typeof(Renderer)) as Renderer;
