@@ -6472,8 +6472,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: PRESS SPACE
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 5c2851a244a14664e9a3e16ba7f3363e, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 5c2851a244a14664e9a3e16ba7f3363e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -15850,6 +15850,9 @@ MonoBehaviour:
   spysMovementPool1: 0
   motivationMaxPlayer1: 100
   motivationCurrentPlayer1: 100
+  tilesToPingPlayer1: []
+  PingsPlayer1: []
+  tilesToPingPlayer1LastFrame: []
   myTurn2: 0
   previousFrameMyTurn2: 0
   currentFrameFirstInTurn2: 0
@@ -15867,6 +15870,10 @@ MonoBehaviour:
   spysMovementPool2: 0
   motivationMaxPlayer2: 100
   motivationCurrentPlayer2: 100
+  tilesToPingPlayer2: []
+  PingsPlayer2: []
+  tilesToPingPlayer2LastFrame: []
+  PrefabPing: {fileID: 7045096060257932230, guid: ffa772bd925f24b4988dc2e0f0a19e5e, type: 3}
   TurnCounter: 0
   Player1Won: 0
   Player2Won: 0
