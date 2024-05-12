@@ -13,6 +13,7 @@ public class MovementPointManager : MonoBehaviour
 
     public GameObject playerOverall1;
 
+    public GameObject CommanderPlayer1;
     public GameObject ArmyPlayer1;
     public GameObject Spy1Player1;
     public GameObject Spy2Player1;
@@ -27,7 +28,8 @@ public class MovementPointManager : MonoBehaviour
     public float armyMovementPool1;
     public float spysMovementPool1;
 
-
+    public float motivationMaxPlayer1 = 100 ;
+    public float motivationCurrentPlayer1 = 100;
 
     //player2
     public bool myTurn2;
@@ -51,22 +53,69 @@ public class MovementPointManager : MonoBehaviour
     public float armyMovementPool2;
     public float spysMovementPool2;
 
+    public float motivationMaxPlayer2 = 100;
+    public float motivationCurrentPlayer2 = 100;
+
 
     //overal
     public int TurnCounter;
+
+    public bool Player1Won = false;
+    public bool Player2Won = false;
+
+    public float MotivationDecreasePerTurn = 5;
 
     private void Update()
     {
         UpdateTurn();
 
+        UpdateMotivation();
+
         GenerateNewDiceRolls1();
         GenerateNewDiceRolls2();
-
 
         AddMovementPlayer1();
         AddMovementPlayer2();
 
+        CheckWinPlayer1();
+        CheckWinPlayer2();
+
+
     }
+
+    private void UpdateMotivation()
+    {
+        if (currentFrameFirstInTurn1)
+            motivationCurrentPlayer1 -= MotivationDecreasePerTurn;
+
+        if (currentFrameFirstInTurn2)
+            motivationCurrentPlayer2 -= MotivationDecreasePerTurn;
+
+        if (playerOverall1.activeSelf)
+        {
+            playerOverall1.GetComponentInChildren<TestMotivationVariable>().motivationMax = motivationMaxPlayer1;
+            motivationCurrentPlayer1 = Math.Min(motivationMaxPlayer1, motivationCurrentPlayer1);
+            playerOverall1.GetComponentInChildren<TestMotivationVariable>().currentMotivationAmount = motivationCurrentPlayer1;
+        }
+        if (playerOverall2.activeSelf)
+        {
+            playerOverall2.GetComponentInChildren<TestMotivationVariable>().motivationMax = motivationMaxPlayer2;
+            motivationCurrentPlayer2 = Math.Min(motivationMaxPlayer2, motivationCurrentPlayer2);
+            playerOverall2.GetComponentInChildren<TestMotivationVariable>().currentMotivationAmount = motivationCurrentPlayer2;
+        }
+    }
+    private void CheckWinPlayer1()
+    {
+        if (ArmyPlayer1.GetComponent<CharacterProperties>().currentTile == CommanderPlayer2.GetComponent<CharacterProperties>().currentTile || motivationCurrentPlayer2 <=0 )
+            Player1Won = true;
+    }
+
+    private void CheckWinPlayer2()
+    {
+        if (ArmyPlayer2.GetComponent<CharacterProperties>().currentTile == CommanderPlayer1.GetComponent<CharacterProperties>().currentTile || motivationCurrentPlayer1 <= 0)
+            Player2Won = true;
+    }
+
 
     private void GenerateNewDiceRolls1()
     {
