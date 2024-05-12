@@ -6,7 +6,7 @@ using UnityEngine;
 public class UnitMovementInfo : MonoBehaviour
 {
     //general Unitmovement
-    private UnitSelector unitSelector;
+    public UnitSelector unitSelector;
     public GameObject currentTile;
     public GameObject aimingTile;
     public string tileTag;
@@ -20,14 +20,6 @@ public class UnitMovementInfo : MonoBehaviour
     public bool IsNextTileAllowed = false;
     public Vector3 aimingtileLocation;
     //Faction Specific
-
-
-
-
-    private void Awake()
-    {
-        unitSelector = GetComponent<UnitSelector>();
-    }
 
     
     private void Update()
