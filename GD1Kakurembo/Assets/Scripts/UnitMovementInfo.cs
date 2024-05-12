@@ -18,13 +18,22 @@ public class UnitMovementInfo : MonoBehaviour
     public float currentMovementPool;
     public float movementCostCurrentAimingTile;
 
+    public MovementPointManager movementPointManager;
+
+
+
     public TileProperties.TileType currentTileType;
 
     public bool IsNextTileAllowed = false;
     public Vector3 aimingtileLocation;
     //Faction Specific
 
-    
+    private void Awake()
+    {
+        movementPointManager = FindAnyObjectByType<MovementPointManager>();
+    }
+
+
     private void Update()
     {
         if (unitSelector.clickedObject != null)
@@ -113,8 +122,42 @@ public class UnitMovementInfo : MonoBehaviour
     private void MoveToNewTile(RaycastHit hit)
     {
         currentMovementPool -= movementCostCurrentAimingTile;
+        CaclulateAndGiveMotivation(hit);
         unitSelector.clickedObject.transform.position = hit.transform.position;
         unitSelector.clickedObject.GetComponent<CharacterProperties>().currentTile = hit.transform.gameObject;
         tileIsClicked = true;
+    }
+
+    private void CaclulateAndGiveMotivation(RaycastHit hit)
+    {
+        if (CheckIfDifferentTileType(hit.transform.gameObject, currentTile))
+        {
+            if (hit.transform.gameObject.GetComponent<TileProperties>().tileType == TileProperties.TileType.ForestTile) 
+            { 
+                if (movementPointManager.myTurn1) //imperial get 5
+                {
+                    movementPointManager.motivationCurrentPlayer1 += 5;
+                }
+                if (movementPointManager.myTurn2) //rebels get 10
+                {
+                    movementPointManager.motivationCurrentPlayer2 += 10;
+
+                }
+            }
+            if (hit.transform.gameObject.GetComponent<TileProperties>().tileType == TileProperties.TileType.VillageTile)
+            {
+                if (movementPointManager.myTurn1) //imperial get 10
+                {
+                    movementPointManager.motivationCurrentPlayer1 += 10;
+                }
+                if (movementPointManager.myTurn2) //rebels get 5
+                {
+                    movementPointManager.motivationCurrentPlayer2 += 5;
+
+                }
+            }
+
+        }
+
     }
 }
