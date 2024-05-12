@@ -7,89 +7,106 @@ public class InBetweenMovementPool : MonoBehaviour
 {
     public MovementPointManager movementPointManager;
     public GameObject theUnit;
-    public float checkup;
 
+    public CharacterProperties characterProperties;
 
     private UnitMovementInfo currentUnitMovementInfo;
 
-    public UnitMovementPool unitMovementpoolType;
-    public Player currentUnitPlayer;
+    public CharacterProperties.UnitMovementPool unitMovementpoolType;
+    public CharacterProperties.Player currentUnitPlayer;
 
-    public enum UnitMovementPool
-    {
-        Commander,
-        Army,
-        Spy
-    }
-    public enum Player
-    {
-        Player1,
-        Player2,
-    }
-
-    private void Awake()
-    {
-        currentUnitMovementInfo = theUnit.GetComponent<UnitMovementInfo>();
-    }
+    public bool tileIsclicked = false;
 
     private void Update()
     {
-        //currentUnitMovementInfo.currentMovementPool = currentUnitMovementPool;
+        if (movementPointManager.myTurn1 && movementPointManager.playerOverall1.GetComponentInChildren<UnitSelector>().clickedObject !=null)
+            theUnit = movementPointManager.playerOverall1.GetComponentInChildren<UnitSelector>().clickedObject;
+        else if (movementPointManager.myTurn2 && movementPointManager.playerOverall2.GetComponentInChildren<UnitSelector>().clickedObject != null)
+            theUnit = movementPointManager.playerOverall2.GetComponentInChildren<UnitSelector>().clickedObject;
+        else 
+            theUnit = null;
 
-        switch (unitMovementpoolType)
+        if (theUnit != null)
         {
-            case UnitMovementPool.Commander:
-                if (currentUnitPlayer == Player.Player1)
-                    if (movementPointManager.currentFrameFirstInTurn1)
-                        currentUnitMovementInfo.currentMovementPool = movementPointManager.commanderMovementPool1;
-                    else
-                        movementPointManager.commanderMovementPool1 = currentUnitMovementInfo.currentMovementPool;
-                else
-                {
-                    if (movementPointManager.currentFrameFirstInTurn2)
-                        currentUnitMovementInfo.currentMovementPool = movementPointManager.commanderMovementPool2;
-                    else
-                        movementPointManager.commanderMovementPool2 = currentUnitMovementInfo.currentMovementPool;
-                }
-                break;
-            case UnitMovementPool.Army:
-                if (currentUnitPlayer == Player.Player1)
-                    if (movementPointManager.currentFrameFirstInTurn1)
-                    {
-                        currentUnitMovementInfo.currentMovementPool = movementPointManager.armyMovementPool1;
-                    }
-                    else
-                    {
-                        movementPointManager.armyMovementPool1 = currentUnitMovementInfo.currentMovementPool;
-                        checkup++;
-                    }
+            currentUnitMovementInfo = theUnit.GetComponent<UnitMovementInfo>();
+            characterProperties = theUnit.GetComponent<CharacterProperties>();
+            currentUnitPlayer = characterProperties.unitPlayer;
+            unitMovementpoolType = characterProperties.unitMovementpoolType;
 
-                else
-                {
-                    if (movementPointManager.currentFrameFirstInTurn2)
-                        currentUnitMovementInfo.currentMovementPool = movementPointManager.armyMovementPool2;
+            tileIsclicked = currentUnitMovementInfo.tileIsClicked;
+
+            switch (unitMovementpoolType)
+            {
+                case CharacterProperties.UnitMovementPool.Commander:
+                    if (currentUnitPlayer == CharacterProperties.Player.Player1)
+                        if (!tileIsclicked)
+                            currentUnitMovementInfo.currentMovementPool = movementPointManager.commanderMovementPool1;
+                        else
+                        {
+                            movementPointManager.commanderMovementPool1 = currentUnitMovementInfo.currentMovementPool;
+                            tileIsclicked = false;
+                        }
                     else
-                        movementPointManager.armyMovementPool2 = currentUnitMovementInfo.currentMovementPool;
-                }
-                break;
-            case UnitMovementPool.Spy:
-                if (currentUnitPlayer == Player.Player1)
-                    if (movementPointManager.currentFrameFirstInTurn1)
-                        currentUnitMovementInfo.currentMovementPool = movementPointManager.spysMovementPool1;
+                    {
+                        if (!tileIsclicked)
+                            currentUnitMovementInfo.currentMovementPool = movementPointManager.commanderMovementPool2;
+                        else
+                        {
+                            movementPointManager.commanderMovementPool2 = currentUnitMovementInfo.currentMovementPool;
+                            tileIsclicked = false;
+                        }
+                    }
+                    break;
+                case CharacterProperties.UnitMovementPool.Army:
+                    if (currentUnitPlayer == CharacterProperties.Player.Player1)
+                        if (!tileIsclicked)
+                        {
+                            currentUnitMovementInfo.currentMovementPool = movementPointManager.armyMovementPool1;
+                        }
+                        else
+                        {
+                            movementPointManager.armyMovementPool1 = currentUnitMovementInfo.currentMovementPool;
+                            tileIsclicked = false;
+
+                        }
+
                     else
-                        movementPointManager.spysMovementPool1 = currentUnitMovementInfo.currentMovementPool;
-                else
-                {
-                    if (movementPointManager.currentFrameFirstInTurn2)
-                        currentUnitMovementInfo.currentMovementPool = movementPointManager.spysMovementPool2;
+                    {
+                        if (!tileIsclicked)
+                            currentUnitMovementInfo.currentMovementPool = movementPointManager.armyMovementPool2;
+                        else
+                        {
+                            movementPointManager.armyMovementPool2 = currentUnitMovementInfo.currentMovementPool;
+                            tileIsclicked = false;
+
+                        }
+                    }
+                    break;
+                case CharacterProperties.UnitMovementPool.Spy:
+                    if (currentUnitPlayer == CharacterProperties.Player.Player1)
+                        if (!tileIsclicked)
+                            currentUnitMovementInfo.currentMovementPool = movementPointManager.spysMovementPool1;
+                        else
+                        {
+                            movementPointManager.spysMovementPool1 = currentUnitMovementInfo.currentMovementPool;
+                            tileIsclicked = false;
+                        }
                     else
-                        movementPointManager.spysMovementPool2 = currentUnitMovementInfo.currentMovementPool;
-                }
-                break;
+                    {
+                        if (!tileIsclicked)
+                            currentUnitMovementInfo.currentMovementPool = movementPointManager.spysMovementPool2;
+                        else
+                        {
+                            movementPointManager.spysMovementPool2 = currentUnitMovementInfo.currentMovementPool;
+                            tileIsclicked = false;
+                        }
+                    }
+                    break;
+
+            }
+            currentUnitMovementInfo.tileIsClicked = tileIsclicked;
         }
-        //currentUnitMovementPool = currentUnitMovementInfo.currentMovementPool;
     }
-
 
 
 

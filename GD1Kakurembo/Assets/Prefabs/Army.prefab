@@ -540,7 +540,7 @@ GameObject:
   - component: {fileID: 5515935540268024465}
   - component: {fileID: 4350897342549442207}
   m_Layer: 0
-  m_Name: CharacterObject
+  m_Name: Army
   m_TagString: Characters
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

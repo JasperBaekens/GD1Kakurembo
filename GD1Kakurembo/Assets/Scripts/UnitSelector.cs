@@ -18,6 +18,7 @@ public class UnitSelector : MonoBehaviour
     public Material materialHighlightClickedBefore;
     public string characterTag;
 
+
     // Update is called once per frame
     void Update()
     {

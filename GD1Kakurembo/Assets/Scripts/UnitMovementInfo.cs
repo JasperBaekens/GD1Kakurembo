@@ -11,6 +11,9 @@ public class UnitMovementInfo : MonoBehaviour
     public GameObject aimingTile;
     public string tileTag;
 
+    public bool tileIsClicked = false;
+
+
     //movement Rules
     public float currentMovementPool;
     public float movementCostCurrentAimingTile;
@@ -112,5 +115,6 @@ public class UnitMovementInfo : MonoBehaviour
         currentMovementPool -= movementCostCurrentAimingTile;
         unitSelector.clickedObject.transform.position = hit.transform.position;
         unitSelector.clickedObject.GetComponent<CharacterProperties>().currentTile = hit.transform.gameObject;
+        tileIsClicked = true;
     }
 }

@@ -8,6 +8,25 @@ public class CharacterProperties : MonoBehaviour
     private Renderer characterRenderer;
     public GameObject currentTile;
 
+    public UnitMovementPool unitMovementpoolType;
+    public Player unitPlayer;
+
+    public enum UnitMovementPool
+    {
+        Commander,
+        Army,
+        Spy
+    }
+    public enum Player
+    {
+        Player1,
+        Player2,
+    }
+
+
+
+
+
     private void Awake()
     {
         characterRenderer = GetComponent(typeof(Renderer)) as Renderer;
