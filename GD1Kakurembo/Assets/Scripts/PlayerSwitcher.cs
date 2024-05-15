@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class CameraSwitcher : MonoBehaviour
 {
-
     [SerializeField]
     private Camera _mainCamera;
     [SerializeField]
@@ -39,35 +38,35 @@ public class CameraSwitcher : MonoBehaviour
 
     private void UpdatePlayerView()
     {
-            if (_currentStep > 3)
-            {
-                _currentStep = 0;
-            }
+        if (_currentStep > 3)
+        {
+            _currentStep = 0;
+        }
 
-            if (_currentStep == 0)
-            {
-                _player1.SetActive(false);
-                _inBetweenScreen.SetActive(false);
-                _currentActiveCamera = _playerCamera1;
-                _player2.SetActive(true);
-            }
-            else if(_currentStep == 2)
-            {
-                _player1.SetActive(true);
-                _inBetweenScreen.SetActive(false);
-                _currentActiveCamera = _playerCamera2;
-                _player2.SetActive(false);
-            }
-            else
-            {
-                _inBetweenScreen.SetActive(true);
-                _player1.SetActive(false);
-                _player2.SetActive(false);
-            }
+        if (_currentStep == 0)
+        {
+            _player1.SetActive(true);
+            _inBetweenScreen.SetActive(false);
+            _currentActiveCamera = _playerCamera2;
+            _player2.SetActive(false);
+        }
+        else if (_currentStep == 2)
+        {
+            _player1.SetActive(false);
+            _inBetweenScreen.SetActive(false);
+            _currentActiveCamera = _playerCamera1;
+            _player2.SetActive(true);
+        }
+        else
+        {
+            _inBetweenScreen.SetActive(true);
+            _player1.SetActive(false);
+            _player2.SetActive(false);
+        }
 
-            foreach (GameObject obj in _toggleActiveListOnStartOfNextPlayerTurn)
-                obj.SetActive(false);
-        
+        foreach (GameObject obj in _toggleActiveListOnStartOfNextPlayerTurn)
+            obj.SetActive(false);
+
 
         if (_player1.activeSelf == true)
             _currentActiveCamera = _playerCamera1;
