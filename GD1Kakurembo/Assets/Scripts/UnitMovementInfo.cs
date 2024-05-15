@@ -123,9 +123,53 @@ public class UnitMovementInfo : MonoBehaviour
     {
         currentMovementPool -= movementCostCurrentAimingTile;
         CaclulateAndGiveMotivation(hit);
+        PingThings(hit);
         unitSelector.clickedObject.transform.position = hit.transform.position;
         unitSelector.clickedObject.GetComponent<CharacterProperties>().currentTile = hit.transform.gameObject;
         tileIsClicked = true;
+    }
+
+    private void PingThings(RaycastHit hit)
+    {
+        if (CheckIfDifferentTileType(hit.transform.gameObject, currentTile))
+        {
+            if (hit.transform.gameObject.GetComponent<TileProperties>().tileType == TileProperties.TileType.ForestTile)
+            {
+                if (movementPointManager.myTurn1)
+                {
+                    movementPointManager.tilesToPingPlayer2.Add(hit.transform.gameObject);
+                }
+                if (movementPointManager.myTurn2)
+                {
+                    movementPointManager.tilesToPingPlayer1.Add(hit.transform.gameObject);
+
+                }
+            }
+            if (hit.transform.gameObject.GetComponent<TileProperties>().tileType == TileProperties.TileType.VillageTile)
+            {
+                if (movementPointManager.myTurn1)
+                {
+                    movementPointManager.tilesToPingPlayer2.Add(hit.transform.gameObject);
+                }
+                if (movementPointManager.myTurn2)
+                {
+                    movementPointManager.tilesToPingPlayer1.Add(hit.transform.gameObject);
+                }
+            }
+            if (hit.transform.gameObject.GetComponent<TileProperties>().tileType == TileProperties.TileType.RoadTile)
+            {
+                if (movementPointManager.myTurn1)
+                {
+                    movementPointManager.tilesToPingPlayer2.Add(hit.transform.gameObject);
+                }
+                if (movementPointManager.myTurn2)
+                {
+                    movementPointManager.tilesToPingPlayer1.Add(hit.transform.gameObject);
+                }
+            }
+
+
+        }
     }
 
     private void CaclulateAndGiveMotivation(RaycastHit hit)
