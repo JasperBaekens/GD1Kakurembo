@@ -16,13 +16,6 @@ public class BoundaryControl : MonoBehaviour
     public Vector3 MousePosition;
     public float MouseMargin = 0.1f;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-
-
-    }
 
     // Update is called once per frame
     void Update()
@@ -40,17 +33,42 @@ public class BoundaryControl : MonoBehaviour
         if (TranslateXZ == Vector3.zero)
         {
             MoveWithScreen();
-
         }
 
 
 
-        if (!((NewPosition.x > LimitX.x) || (NewPosition.x < (LimitX.x * -1)) || (NewPosition.z < (-LimitZ.z)) || (NewPosition.z > LimitZ.z)))
+        if ((NewPosition.x >= LimitX.x))
         {
-            transform.Translate(TranslateXZ);
-            //Debug.Log("We Good");
+            //Debug.Log("out of X+");
+            TranslateXZ = new Vector3(TranslateX, 0, Math.Min(0, TranslateZ)).normalized * Speed * Time.deltaTime;
+            NewPosition = transform.position + TranslateXZ; //new Vector3(TranslateX, 0, TranslateZ);
+
 
         }
+        else if (NewPosition.x <= (-LimitX.x))
+        {
+            //Debug.Log("out of X-");
+            TranslateXZ = new Vector3(TranslateX, 0, Math.Max(0, TranslateZ)).normalized * Speed * Time.deltaTime;
+            NewPosition = transform.position + TranslateXZ; //new Vector3(TranslateX, 0, TranslateZ);
+
+        }
+        else if ((NewPosition.z >= LimitZ.z))
+        {
+            //Debug.Log("out of Z+");
+            TranslateXZ = new Vector3(Math.Max(0, TranslateX), 0, TranslateZ).normalized * Speed * Time.deltaTime;
+            NewPosition = transform.position + TranslateXZ; //new Vector3(TranslateX, 0, TranslateZ);
+
+        }
+        else if (NewPosition.z <= (-LimitZ.z))
+        {
+            //Debug.Log("out of Z-");
+            TranslateXZ = new Vector3(Math.Min(0, TranslateX), 0, TranslateZ).normalized * Speed * Time.deltaTime;
+            NewPosition = transform.position + TranslateXZ; //new Vector3(TranslateX, 0, TranslateZ);
+
+        }
+
+        transform.Translate(TranslateXZ);
+        //Debug.Log("We Good");
 
 
 
