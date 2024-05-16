@@ -17,6 +17,8 @@ public class CameraSwitcher : MonoBehaviour
     private GameObject _player2;
     [SerializeField]
     private GameObject _inBetweenScreen;
+    [SerializeField]
+    private GameObject _endTurnButton;
     public int _currentStep = 0;
 
     [SerializeField]
@@ -47,6 +49,7 @@ public class CameraSwitcher : MonoBehaviour
         {
             _player1.SetActive(true);
             _inBetweenScreen.SetActive(false);
+            _endTurnButton.SetActive(true);
             _currentActiveCamera = _playerCamera2;
             _player2.SetActive(false);
         }
@@ -54,12 +57,14 @@ public class CameraSwitcher : MonoBehaviour
         {
             _player1.SetActive(false);
             _inBetweenScreen.SetActive(false);
+            _endTurnButton.SetActive(true);
             _currentActiveCamera = _playerCamera1;
             _player2.SetActive(true);
         }
         else
         {
             _inBetweenScreen.SetActive(true);
+            _endTurnButton.SetActive(false);
             _player1.SetActive(false);
             _player2.SetActive(false);
         }
