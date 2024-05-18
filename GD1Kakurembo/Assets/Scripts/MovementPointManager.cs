@@ -26,10 +26,6 @@ public class MovementPointManager : MonoBehaviour
     public int armyDiceResult1;
     public int spysDiceResult1;
 
-    public float commanderMovementPool1;
-    public float armyMovementPool1;
-    public float spysMovementPool1;
-
     public float motivationMaxPlayer1 = 100 ;
     public float motivationCurrentPlayer1 = 100;
 
@@ -56,9 +52,6 @@ public class MovementPointManager : MonoBehaviour
     public int armyDiceResult2;
     public int spysDiceResult2;
 
-    public float commanderMovementPool2;
-    public float armyMovementPool2;
-    public float spysMovementPool2;
 
     public float motivationMaxPlayer2 = 100;
     public float motivationCurrentPlayer2 = 100;
@@ -79,6 +72,20 @@ public class MovementPointManager : MonoBehaviour
     public float MotivationDecreasePerTurn = 5;
     public bool Commander1Found = false;
     public bool Commander2Found = false;
+
+
+
+    //movement tryfix
+    public MovementPool MovementPoolSpyPlayer1;
+    public MovementPool MovementPoolSpyPlayer2;
+    public MovementPool MovementPoolArmyPlayer1;
+    public MovementPool MovementPoolArmyPlayer2;
+    public MovementPool MovementPoolCommanderPlayer1;
+    public MovementPool MovementPoolCommanderPlayer2;
+
+
+
+
 
     private void Update()
     {
@@ -126,7 +133,6 @@ public class MovementPointManager : MonoBehaviour
             Commander1Found = true;
             tilesToPingPlayer2.Add(CommanderPlayer1.GetComponent<CharacterProperties>().currentTile);
             tilesToPingPlayer1.Add(CommanderPlayer1.GetComponent<CharacterProperties>().currentTile);
-
         }
         if (!Commander2Found &(
             CommanderPlayer2.GetComponent<CharacterProperties>().currentTile == Spy1Player1.GetComponent<CharacterProperties>().currentTile ||
@@ -258,23 +264,26 @@ public class MovementPointManager : MonoBehaviour
     }
 
 
-    private void AddMovementPlayer1()
+    private void AddMovementPlayer1() //seems fine
+
+
     {
         if (currentFrameFirstInTurn1) //assign movement here for player1 in beginning of turn
         {
-            spysMovementPool1 += armyMovementPool1 + commanderMovementPool1 + spysDiceResult1;
-            commanderMovementPool1 = commanderDiceResult1;
-            armyMovementPool1 = armyDiceResult1;
-
+            Debug.Log($"first diceroll assigned: C:{commanderDiceResult1}, A:{armyDiceResult1}, S:{spysDiceResult1}");
+            MovementPoolSpyPlayer1.MovementPoolCurrent += MovementPoolArmyPlayer1.MovementPoolCurrent + MovementPoolCommanderPlayer1.MovementPoolCurrent + spysDiceResult1;
+            MovementPoolCommanderPlayer1.MovementPoolCurrent = commanderDiceResult1;
+            MovementPoolArmyPlayer1.MovementPoolCurrent = armyDiceResult1;
         }
     }
     private void AddMovementPlayer2()
     {
         if (currentFrameFirstInTurn2) //assign movement here for player 2 in beginning of turn
         {
-            spysMovementPool2 += armyMovementPool2 + commanderMovementPool2 + spysDiceResult2;
-            commanderMovementPool2 = commanderDiceResult2;
-            armyMovementPool2 = armyDiceResult2;
+            Debug.Log($"first diceroll assigned: C:{commanderDiceResult2}, A:{armyDiceResult2}, S:{spysDiceResult2}");
+            MovementPoolSpyPlayer2.MovementPoolCurrent += MovementPoolArmyPlayer2.MovementPoolCurrent + MovementPoolCommanderPlayer2.MovementPoolCurrent + spysDiceResult2;
+            MovementPoolCommanderPlayer2.MovementPoolCurrent = commanderDiceResult2;
+            MovementPoolArmyPlayer2.MovementPoolCurrent = armyDiceResult2;
         }
     }
 

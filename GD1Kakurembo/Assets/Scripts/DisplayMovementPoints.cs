@@ -9,6 +9,20 @@ public class DisplayMovementPoints : MonoBehaviour
     public TextMeshProUGUI MovementLeftOfUnit;
     public MovementPointManager MovementPointManager;
     public PlayerSelector attachedPlayer;
+
+
+    //movementpointfix
+    public MovementPool MovementPoolSpyPlayer1;
+    public MovementPool MovementPoolSpyPlayer2;
+    public MovementPool MovementPoolArmyPlayer1;
+    public MovementPool MovementPoolArmyPlayer2;
+    public MovementPool MovementPoolCommanderPlayer1;
+    public MovementPool MovementPoolCommanderPlayer2;
+
+
+
+
+
     public enum PlayerSelector
     {
         Player1,
@@ -22,10 +36,10 @@ public class DisplayMovementPoints : MonoBehaviour
         switch (attachedPlayer)
         {
             case PlayerSelector.Player1:
-                MovementLeftOfUnit.text = $"Commander Movement Points: {MovementPointManager.commanderMovementPool1}\nArmy Movement Points: {MovementPointManager.armyMovementPool1}\nSpies Movement Points: {MovementPointManager.spysMovementPool1}";
+                MovementLeftOfUnit.text = $"Commander Movement Points: {MovementPoolCommanderPlayer1.MovementPoolCurrent}\nArmy Movement Points: {MovementPoolArmyPlayer1.MovementPoolCurrent}\nSpies Movement Points: {MovementPoolSpyPlayer1.MovementPoolCurrent}";
                 break;
             case PlayerSelector.Player2:
-                MovementLeftOfUnit.text = $"Commander Movement Points: {MovementPointManager.commanderMovementPool2}\nArmy Movement Points: {MovementPointManager.armyMovementPool2}\nSpies Movement Points: {MovementPointManager.spysMovementPool2}";
+                MovementLeftOfUnit.text = $"Commander Movement Points: {MovementPoolCommanderPlayer2.MovementPoolCurrent}\nArmy Movement Points: {MovementPoolArmyPlayer2.MovementPoolCurrent}\nSpies Movement Points: {MovementPoolSpyPlayer2.MovementPoolCurrent}";
                 break;
         }
     }

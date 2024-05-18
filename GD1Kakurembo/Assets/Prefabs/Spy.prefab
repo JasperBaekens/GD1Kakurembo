@@ -434,8 +434,6 @@ GameObject:
   - component: {fileID: 6987987454451070126}
   - component: {fileID: 7099929628308007621}
   - component: {fileID: 5164172098275908263}
-  - component: {fileID: 5515935540268024465}
-  - component: {fileID: 4350897342549442207}
   m_Layer: 0
   m_Name: Spy
   m_TagString: Characters
@@ -472,6 +470,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentTile: {fileID: 0}
+  unitMovementpoolType: 0
+  unitPlayer: 0
+  MovementPool: {fileID: 0}
 --- !u!23 &7099929628308007621
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -535,43 +536,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.05, y: 2.28, z: 1}
   m_Center: {x: 0, y: 1.1, z: 0}
---- !u!114 &5515935540268024465
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2872535741915781866}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9913f315510206c45a3043c4d83fd1ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  unitSelector: {fileID: 0}
-  currentTile: {fileID: 0}
-  aimingTile: {fileID: 0}
-  tileTag: 
-  currentMovementPool: 0
-  movementCostCurrentAimingTile: 0
-  currentTileType: 0
-  IsNextTileAllowed: 0
-  aimingtileLocation: {x: 0, y: 0, z: 0}
---- !u!114 &4350897342549442207
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2872535741915781866}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a93ed4eabad63b4199b96606ae5faab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movementPointManager: {fileID: 0}
-  theUnit: {fileID: 0}
-  unitMovementpoolType: 0
-  currentUnitPlayer: 0
 --- !u!1 &4087170299451953612
 GameObject:
   m_ObjectHideFlags: 0

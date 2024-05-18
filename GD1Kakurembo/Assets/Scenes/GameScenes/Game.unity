@@ -1740,6 +1740,51 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1051433142371837902, guid: 70132cda4c92f86488ce9824c90050cd, type: 3}
   m_PrefabInstance: {fileID: 52071823}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &52109561
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 52109562}
+  - component: {fileID: 52109563}
+  m_Layer: 0
+  m_Name: SpyPlayer2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &52109562
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 52109561}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 177638360}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &52109563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 52109561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 220534a2338ebd54fbf2c9482950e6fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MovementPoolCurrent: 0
 --- !u!1001 &53813827
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4642,6 +4687,43 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1051433142371837902, guid: 70132cda4c92f86488ce9824c90050cd, type: 3}
   m_PrefabInstance: {fileID: 174345937}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &177638359
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 177638360}
+  m_Layer: 0
+  m_Name: MovementPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &177638360
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 177638359}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 703824383}
+  - {fileID: 52109562}
+  - {fileID: 1402108177}
+  - {fileID: 1183627615}
+  - {fileID: 1478380440}
+  - {fileID: 1011712658}
+  m_Father: {fileID: 1462482083}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &182651415
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5424,6 +5506,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 395428391}
     - target: {fileID: 5515935540268024465, guid: b66c403c32119db4eb70b8bfe97960ed, type: 3}
+      propertyPath: MovementPool
+      value: 
+      objectReference: {fileID: 52109563}
+    - target: {fileID: 5515935540268024465, guid: b66c403c32119db4eb70b8bfe97960ed, type: 3}
       propertyPath: unitSelector
       value: 
       objectReference: {fileID: 1489901210}
@@ -5439,6 +5525,10 @@ PrefabInstance:
       propertyPath: currentTile
       value: 
       objectReference: {fileID: 395428391}
+    - target: {fileID: 6987987454451070126, guid: b66c403c32119db4eb70b8bfe97960ed, type: 3}
+      propertyPath: MovementPool
+      value: 
+      objectReference: {fileID: 52109563}
     - target: {fileID: 6987987454451070126, guid: b66c403c32119db4eb70b8bfe97960ed, type: 3}
       propertyPath: unitMovementpoolType
       value: 2
@@ -5463,7 +5553,8 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 8b6dcd8c330162c42a956fecb4fd2ac1, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5515935540268024465, guid: b66c403c32119db4eb70b8bfe97960ed, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -7029,6 +7120,12 @@ MonoBehaviour:
   MovementLeftOfUnit: {fileID: 255500826}
   MovementPointManager: {fileID: 658836979}
   attachedPlayer: 0
+  MovementPoolSpyPlayer1: {fileID: 703824384}
+  MovementPoolSpyPlayer2: {fileID: 52109563}
+  MovementPoolArmyPlayer1: {fileID: 1402108178}
+  MovementPoolArmyPlayer2: {fileID: 1183627616}
+  MovementPoolCommanderPlayer1: {fileID: 1478380441}
+  MovementPoolCommanderPlayer2: {fileID: 1011712659}
 --- !u!114 &255500826
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15948,7 +16045,6 @@ GameObject:
   m_Component:
   - component: {fileID: 658836978}
   - component: {fileID: 658836979}
-  - component: {fileID: 658836980}
   m_Layer: 0
   m_Name: Info Manager
   m_TagString: Untagged
@@ -15995,9 +16091,6 @@ MonoBehaviour:
   commanderDiceResult1: 0
   armyDiceResult1: 0
   spysDiceResult1: 0
-  commanderMovementPool1: 0
-  armyMovementPool1: 0
-  spysMovementPool1: 0
   motivationMaxPlayer1: 100
   motivationCurrentPlayer1: 100
   tilesToPingPlayer1: []
@@ -16015,9 +16108,6 @@ MonoBehaviour:
   commanderDiceResult2: 0
   armyDiceResult2: 0
   spysDiceResult2: 0
-  commanderMovementPool2: 0
-  armyMovementPool2: 0
-  spysMovementPool2: 0
   motivationMaxPlayer2: 100
   motivationCurrentPlayer2: 100
   tilesToPingPlayer2: []
@@ -16030,24 +16120,12 @@ MonoBehaviour:
   MotivationDecreasePerTurn: 5
   Commander1Found: 0
   Commander2Found: 0
---- !u!114 &658836980
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 658836977}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a93ed4eabad63b4199b96606ae5faab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movementPointManager: {fileID: 658836979}
-  theUnit: {fileID: 0}
-  characterProperties: {fileID: 0}
-  unitMovementpoolType: 0
-  currentUnitPlayer: 0
-  tileIsclicked: 0
+  MovementPoolSpyPlayer1: {fileID: 703824384}
+  MovementPoolSpyPlayer2: {fileID: 52109563}
+  MovementPoolArmyPlayer1: {fileID: 1402108178}
+  MovementPoolArmyPlayer2: {fileID: 1183627616}
+  MovementPoolCommanderPlayer1: {fileID: 1478380441}
+  MovementPoolCommanderPlayer2: {fileID: 1011712659}
 --- !u!4 &660059425 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1051433142371837902, guid: cfad77c7a92f9fd488175d3277311e1c, type: 3}
@@ -17013,6 +17091,51 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _canvas: {fileID: 1029305503}
+--- !u!1 &703824382
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 703824383}
+  - component: {fileID: 703824384}
+  m_Layer: 0
+  m_Name: SpyPlayer1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &703824383
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 703824382}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 177638360}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &703824384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 703824382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 220534a2338ebd54fbf2c9482950e6fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MovementPoolCurrent: 0
 --- !u!1001 &705325791
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17287,6 +17410,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1463890848}
     - target: {fileID: 5515935540268024465, guid: 0a0caaf3f9a0c2e47bbd462e1292a8b2, type: 3}
+      propertyPath: MovementPool
+      value: 
+      objectReference: {fileID: 1402108178}
+    - target: {fileID: 5515935540268024465, guid: 0a0caaf3f9a0c2e47bbd462e1292a8b2, type: 3}
       propertyPath: unitSelector
       value: 
       objectReference: {fileID: 896507959}
@@ -17303,9 +17430,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1463890848}
     - target: {fileID: 6987987454451070126, guid: 0a0caaf3f9a0c2e47bbd462e1292a8b2, type: 3}
-      propertyPath: unitMovementpoolType
-      value: 1
-      objectReference: {fileID: 0}
+      propertyPath: MovementPool
+      value: 
+      objectReference: {fileID: 1402108178}
     - target: {fileID: 7099929628308007621, guid: 0a0caaf3f9a0c2e47bbd462e1292a8b2, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -17330,7 +17457,8 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 9b4be360e68d9a74d95aabe2ab6b24c5, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5515935540268024465, guid: 0a0caaf3f9a0c2e47bbd462e1292a8b2, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -17857,6 +17985,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 131064001}
     - target: {fileID: 5515935540268024465, guid: 0a0caaf3f9a0c2e47bbd462e1292a8b2, type: 3}
+      propertyPath: MovementPool
+      value: 
+      objectReference: {fileID: 1183627616}
+    - target: {fileID: 5515935540268024465, guid: 0a0caaf3f9a0c2e47bbd462e1292a8b2, type: 3}
       propertyPath: unitSelector
       value: 
       objectReference: {fileID: 1489901210}
@@ -17876,6 +18008,10 @@ PrefabInstance:
       propertyPath: currentTile
       value: 
       objectReference: {fileID: 131064001}
+    - target: {fileID: 6987987454451070126, guid: 0a0caaf3f9a0c2e47bbd462e1292a8b2, type: 3}
+      propertyPath: MovementPool
+      value: 
+      objectReference: {fileID: 1183627616}
     - target: {fileID: 6987987454451070126, guid: 0a0caaf3f9a0c2e47bbd462e1292a8b2, type: 3}
       propertyPath: unitMovementpoolType
       value: 1
@@ -17904,7 +18040,8 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 8b6dcd8c330162c42a956fecb4fd2ac1, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5515935540268024465, guid: 0a0caaf3f9a0c2e47bbd462e1292a8b2, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -24648,6 +24785,51 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1051433142371837902, guid: 70132cda4c92f86488ce9824c90050cd, type: 3}
   m_PrefabInstance: {fileID: 1009295344}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1011712657
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1011712658}
+  - component: {fileID: 1011712659}
+  m_Layer: 0
+  m_Name: CommanderPlayer2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1011712658
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1011712657}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 177638360}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1011712659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1011712657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 220534a2338ebd54fbf2c9482950e6fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MovementPoolCurrent: 0
 --- !u!1 &1015127787
 GameObject:
   m_ObjectHideFlags: 0
@@ -25338,7 +25520,7 @@ MonoBehaviour:
   _player1: {fileID: 1893137260}
   _player2: {fileID: 165973563}
   _inBetweenScreen: {fileID: 718412029}
-  _currentStep: 0
+  _currentStep: 2
   _toggleActiveListOnStartOfNextPlayerTurn: []
 --- !u!1001 &1029656157
 PrefabInstance:
@@ -28650,6 +28832,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1604552102}
     - target: {fileID: 5515935540268024465, guid: b66c403c32119db4eb70b8bfe97960ed, type: 3}
+      propertyPath: MovementPool
+      value: 
+      objectReference: {fileID: 52109563}
+    - target: {fileID: 5515935540268024465, guid: b66c403c32119db4eb70b8bfe97960ed, type: 3}
       propertyPath: unitSelector
       value: 
       objectReference: {fileID: 1489901210}
@@ -28665,6 +28851,10 @@ PrefabInstance:
       propertyPath: currentTile
       value: 
       objectReference: {fileID: 1604552102}
+    - target: {fileID: 6987987454451070126, guid: b66c403c32119db4eb70b8bfe97960ed, type: 3}
+      propertyPath: MovementPool
+      value: 
+      objectReference: {fileID: 52109563}
     - target: {fileID: 6987987454451070126, guid: b66c403c32119db4eb70b8bfe97960ed, type: 3}
       propertyPath: unitMovementpoolType
       value: 2
@@ -28689,7 +28879,8 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 8b6dcd8c330162c42a956fecb4fd2ac1, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5515935540268024465, guid: b66c403c32119db4eb70b8bfe97960ed, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -29624,6 +29815,51 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1051433142371837902, guid: 70132cda4c92f86488ce9824c90050cd, type: 3}
   m_PrefabInstance: {fileID: 1181960691}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1183627614
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1183627615}
+  - component: {fileID: 1183627616}
+  m_Layer: 0
+  m_Name: ArmyPlayer2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1183627615
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1183627614}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 177638360}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1183627616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1183627614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 220534a2338ebd54fbf2c9482950e6fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MovementPoolCurrent: 0
 --- !u!4 &1189722008 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1051433142371837902, guid: cfad77c7a92f9fd488175d3277311e1c, type: 3}
@@ -34833,6 +35069,51 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1051433142371837902, guid: 70132cda4c92f86488ce9824c90050cd, type: 3}
   m_PrefabInstance: {fileID: 1400568808}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1402108176
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1402108177}
+  - component: {fileID: 1402108178}
+  m_Layer: 0
+  m_Name: ArmyPlayer1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1402108177
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1402108176}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 177638360}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1402108178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1402108176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 220534a2338ebd54fbf2c9482950e6fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MovementPoolCurrent: 0
 --- !u!1001 &1403087438
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -36082,6 +36363,7 @@ Transform:
   - {fileID: 1884789465}
   - {fileID: 1029305504}
   - {fileID: 658836978}
+  - {fileID: 177638360}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1463890846
@@ -36376,6 +36658,51 @@ Transform:
   - {fileID: 432968306}
   m_Father: {fileID: 806118205}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1478380439
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1478380440}
+  - component: {fileID: 1478380441}
+  m_Layer: 0
+  m_Name: CommanderPlayer1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1478380440
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1478380439}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 177638360}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1478380441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1478380439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 220534a2338ebd54fbf2c9482950e6fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MovementPoolCurrent: 0
 --- !u!4 &1485032698 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8530607306708978450, guid: 8752b31abce1ff740afccb02af967f92, type: 3}
@@ -41629,6 +41956,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 472111098}
     - target: {fileID: 5515935540268024465, guid: b66c403c32119db4eb70b8bfe97960ed, type: 3}
+      propertyPath: MovementPool
+      value: 
+      objectReference: {fileID: 703824384}
+    - target: {fileID: 5515935540268024465, guid: b66c403c32119db4eb70b8bfe97960ed, type: 3}
       propertyPath: unitSelector
       value: 
       objectReference: {fileID: 896507959}
@@ -41640,6 +41971,10 @@ PrefabInstance:
       propertyPath: currentTile
       value: 
       objectReference: {fileID: 472111098}
+    - target: {fileID: 6987987454451070126, guid: b66c403c32119db4eb70b8bfe97960ed, type: 3}
+      propertyPath: MovementPool
+      value: 
+      objectReference: {fileID: 703824384}
     - target: {fileID: 6987987454451070126, guid: b66c403c32119db4eb70b8bfe97960ed, type: 3}
       propertyPath: unitMovementpoolType
       value: 2
@@ -41664,7 +41999,8 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 9b4be360e68d9a74d95aabe2ab6b24c5, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5515935540268024465, guid: b66c403c32119db4eb70b8bfe97960ed, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -44445,6 +44781,12 @@ MonoBehaviour:
   MovementLeftOfUnit: {fileID: 1822207124}
   MovementPointManager: {fileID: 658836979}
   attachedPlayer: 1
+  MovementPoolSpyPlayer1: {fileID: 703824384}
+  MovementPoolSpyPlayer2: {fileID: 52109563}
+  MovementPoolArmyPlayer1: {fileID: 1402108178}
+  MovementPoolArmyPlayer2: {fileID: 1183627616}
+  MovementPoolCommanderPlayer1: {fileID: 1478380441}
+  MovementPoolCommanderPlayer2: {fileID: 1011712659}
 --- !u!114 &1822207124
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44639,6 +44981,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1904167019}
     - target: {fileID: 5515935540268024465, guid: b66c403c32119db4eb70b8bfe97960ed, type: 3}
+      propertyPath: MovementPool
+      value: 
+      objectReference: {fileID: 703824384}
+    - target: {fileID: 5515935540268024465, guid: b66c403c32119db4eb70b8bfe97960ed, type: 3}
       propertyPath: unitSelector
       value: 
       objectReference: {fileID: 896507959}
@@ -44650,6 +44996,10 @@ PrefabInstance:
       propertyPath: currentTile
       value: 
       objectReference: {fileID: 1904167019}
+    - target: {fileID: 6987987454451070126, guid: b66c403c32119db4eb70b8bfe97960ed, type: 3}
+      propertyPath: MovementPool
+      value: 
+      objectReference: {fileID: 703824384}
     - target: {fileID: 6987987454451070126, guid: b66c403c32119db4eb70b8bfe97960ed, type: 3}
       propertyPath: unitMovementpoolType
       value: 2
@@ -44674,7 +45024,8 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 9b4be360e68d9a74d95aabe2ab6b24c5, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5515935540268024465, guid: b66c403c32119db4eb70b8bfe97960ed, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -45828,6 +46179,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1890805460}
     - target: {fileID: 5515935540268024465, guid: b66c403c32119db4eb70b8bfe97960ed, type: 3}
+      propertyPath: MovementPool
+      value: 
+      objectReference: {fileID: 52109563}
+    - target: {fileID: 5515935540268024465, guid: b66c403c32119db4eb70b8bfe97960ed, type: 3}
       propertyPath: unitSelector
       value: 
       objectReference: {fileID: 1489901210}
@@ -45843,6 +46198,10 @@ PrefabInstance:
       propertyPath: currentTile
       value: 
       objectReference: {fileID: 1890805460}
+    - target: {fileID: 6987987454451070126, guid: b66c403c32119db4eb70b8bfe97960ed, type: 3}
+      propertyPath: MovementPool
+      value: 
+      objectReference: {fileID: 52109563}
     - target: {fileID: 6987987454451070126, guid: b66c403c32119db4eb70b8bfe97960ed, type: 3}
       propertyPath: unitMovementpoolType
       value: 2
@@ -45867,7 +46226,8 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 8b6dcd8c330162c42a956fecb4fd2ac1, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5515935540268024465, guid: b66c403c32119db4eb70b8bfe97960ed, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -48799,6 +49159,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 800957862}
     - target: {fileID: 5515935540268024465, guid: 7d305acb9aa6f9143b37dca253d97375, type: 3}
+      propertyPath: MovementPool
+      value: 
+      objectReference: {fileID: 1011712659}
+    - target: {fileID: 5515935540268024465, guid: 7d305acb9aa6f9143b37dca253d97375, type: 3}
       propertyPath: unitSelector
       value: 
       objectReference: {fileID: 1489901210}
@@ -48810,6 +49174,10 @@ PrefabInstance:
       propertyPath: currentTile
       value: 
       objectReference: {fileID: 800957862}
+    - target: {fileID: 6987987454451070126, guid: 7d305acb9aa6f9143b37dca253d97375, type: 3}
+      propertyPath: MovementPool
+      value: 
+      objectReference: {fileID: 1011712659}
     - target: {fileID: 7099929628308007621, guid: 7d305acb9aa6f9143b37dca253d97375, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -48838,7 +49206,8 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 8b6dcd8c330162c42a956fecb4fd2ac1, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5515935540268024465, guid: 7d305acb9aa6f9143b37dca253d97375, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -51296,6 +51665,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1950067247}
     - target: {fileID: 5515935540268024465, guid: 7d305acb9aa6f9143b37dca253d97375, type: 3}
+      propertyPath: MovementPool
+      value: 
+      objectReference: {fileID: 1478380441}
+    - target: {fileID: 5515935540268024465, guid: 7d305acb9aa6f9143b37dca253d97375, type: 3}
       propertyPath: unitSelector
       value: 
       objectReference: {fileID: 896507959}
@@ -51303,6 +51676,10 @@ PrefabInstance:
       propertyPath: currentTile
       value: 
       objectReference: {fileID: 1950067247}
+    - target: {fileID: 6987987454451070126, guid: 7d305acb9aa6f9143b37dca253d97375, type: 3}
+      propertyPath: MovementPool
+      value: 
+      objectReference: {fileID: 1478380441}
     - target: {fileID: 7099929628308007621, guid: 7d305acb9aa6f9143b37dca253d97375, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -51331,7 +51708,8 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 9b4be360e68d9a74d95aabe2ab6b24c5, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5515935540268024465, guid: 7d305acb9aa6f9143b37dca253d97375, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -51443,6 +51821,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1128678893}
     - target: {fileID: 5515935540268024465, guid: b66c403c32119db4eb70b8bfe97960ed, type: 3}
+      propertyPath: MovementPool
+      value: 
+      objectReference: {fileID: 703824384}
+    - target: {fileID: 5515935540268024465, guid: b66c403c32119db4eb70b8bfe97960ed, type: 3}
       propertyPath: unitSelector
       value: 
       objectReference: {fileID: 896507959}
@@ -51454,6 +51836,10 @@ PrefabInstance:
       propertyPath: currentTile
       value: 
       objectReference: {fileID: 1128678893}
+    - target: {fileID: 6987987454451070126, guid: b66c403c32119db4eb70b8bfe97960ed, type: 3}
+      propertyPath: MovementPool
+      value: 
+      objectReference: {fileID: 703824384}
     - target: {fileID: 6987987454451070126, guid: b66c403c32119db4eb70b8bfe97960ed, type: 3}
       propertyPath: unitMovementpoolType
       value: 2
@@ -51478,7 +51864,8 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 9b4be360e68d9a74d95aabe2ab6b24c5, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5515935540268024465, guid: b66c403c32119db4eb70b8bfe97960ed, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

@@ -11,6 +11,11 @@ public class CharacterProperties : MonoBehaviour
     public UnitMovementPool unitMovementpoolType;
     public Player unitPlayer;
 
+
+
+    //movementpoolfix
+    public MovementPool MovementPool;
+    
     public enum UnitMovementPool
     {
         Commander,
