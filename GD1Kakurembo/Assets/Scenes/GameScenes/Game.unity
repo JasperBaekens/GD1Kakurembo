@@ -25520,7 +25520,7 @@ MonoBehaviour:
   _player1: {fileID: 1893137260}
   _player2: {fileID: 165973563}
   _inBetweenScreen: {fileID: 718412029}
-  _currentStep: 2
+  _currentStep: 0
   _toggleActiveListOnStartOfNextPlayerTurn: []
 --- !u!1001 &1029656157
 PrefabInstance:
