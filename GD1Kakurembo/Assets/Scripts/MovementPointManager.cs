@@ -270,7 +270,7 @@ public class MovementPointManager : MonoBehaviour
     {
         if (currentFrameFirstInTurn1) //assign movement here for player1 in beginning of turn
         {
-            Debug.Log($"first diceroll assigned: C:{commanderDiceResult1}, A:{armyDiceResult1}, S:{spysDiceResult1}");
+            //Debug.Log($"first diceroll assigned: C:{commanderDiceResult1}, A:{armyDiceResult1}, S:{spysDiceResult1}");
             MovementPoolSpyPlayer1.MovementPoolCurrent += MovementPoolArmyPlayer1.MovementPoolCurrent + MovementPoolCommanderPlayer1.MovementPoolCurrent + spysDiceResult1;
             MovementPoolCommanderPlayer1.MovementPoolCurrent = commanderDiceResult1;
             MovementPoolArmyPlayer1.MovementPoolCurrent = armyDiceResult1;
@@ -280,7 +280,7 @@ public class MovementPointManager : MonoBehaviour
     {
         if (currentFrameFirstInTurn2) //assign movement here for player 2 in beginning of turn
         {
-            Debug.Log($"first diceroll assigned: C:{commanderDiceResult2}, A:{armyDiceResult2}, S:{spysDiceResult2}");
+            //Debug.Log($"first diceroll assigned: C:{commanderDiceResult2}, A:{armyDiceResult2}, S:{spysDiceResult2}");
             MovementPoolSpyPlayer2.MovementPoolCurrent += MovementPoolArmyPlayer2.MovementPoolCurrent + MovementPoolCommanderPlayer2.MovementPoolCurrent + spysDiceResult2;
             MovementPoolCommanderPlayer2.MovementPoolCurrent = commanderDiceResult2;
             MovementPoolArmyPlayer2.MovementPoolCurrent = armyDiceResult2;

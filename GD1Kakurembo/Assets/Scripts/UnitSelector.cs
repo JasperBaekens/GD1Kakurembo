@@ -24,7 +24,7 @@ public class UnitSelector : MonoBehaviour
     private TileProperties.TileType currentTileSelectedUnitType;
     private GameObject aimingTile;
 
-    private bool IsNextTileAllowed = false; //could do messages with this
+    //private bool IsNextTileAllowed = false; //could do messages with this
     private float movementCostCurrentAimingTile;
     private MovementPool movementPoolCurrentSelectedUnit;
     private MovementPointManager movementPointManager;
@@ -145,7 +145,7 @@ public class UnitSelector : MonoBehaviour
 
                 if (CheckIfTileAdjacent(hit))
                 {
-                    IsNextTileAllowed = true;
+                    //IsNextTileAllowed = true;
                     if (CheckIfDifferentTileType(aimingTile, currentTileSelectedUnit))
                     {
                         movementCostCurrentAimingTile = 1f;
@@ -171,7 +171,7 @@ public class UnitSelector : MonoBehaviour
                 }
                 else
                 {
-                    IsNextTileAllowed = false;
+                    //IsNextTileAllowed = false;
                     //communicate not allowed move
                 }
                 //Can do preemptive messages/options here before player clicks another tile
@@ -179,8 +179,8 @@ public class UnitSelector : MonoBehaviour
 
             if (Input.GetMouseButtonDown(0) && currentTileSelectedUnit != aimingTile && clickedObject != null && hit.transform.gameObject.CompareTag("Tile")) // also condition for leftover motivation
             {
-                Debug.Log($"Check If Tile Adjecent: {CheckIfTileAdjacent(hit)} ; Check If Enough Movement Cost Left(): {CheckIfEnoughMovementCostLeft()}");
-                Debug.Log($"CheckIfEnoughMovementCostLeft: needed:{movementCostCurrentAimingTile} Movementpool:{movementPoolCurrentSelectedUnit.name} have:{movementPoolCurrentSelectedUnit.MovementPoolCurrent}"); //wrong movementpool, switches even between clicks???
+                //Debug.Log($"Check If Tile Adjecent: {CheckIfTileAdjacent(hit)} ; Check If Enough Movement Cost Left(): {CheckIfEnoughMovementCostLeft()}");
+                //Debug.Log($"CheckIfEnoughMovementCostLeft: needed:{movementCostCurrentAimingTile} Movementpool:{movementPoolCurrentSelectedUnit.name} have:{movementPoolCurrentSelectedUnit.MovementPoolCurrent}"); //wrong movementpool, switches even between clicks???
                 if (CheckIfTileAdjacent(hit) && CheckIfEnoughMovementCostLeft())
                 {
                     MoveToNewTile(hit);
