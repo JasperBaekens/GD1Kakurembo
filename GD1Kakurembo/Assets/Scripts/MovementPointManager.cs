@@ -151,14 +151,18 @@ public class MovementPointManager : MonoBehaviour
 
     private void DrawPingListPlayer1()
     {
-        if (currentFrameFirstInTurn1 ||(myTurn1 && tilesToPingPlayer1.Count > tilesToPingPlayer1LastFrame.Count))
+        if (currentFrameFirstInTurn1 || Commander2Found)
         {
             DeletePings(PingsPlayer1);
-            foreach (var tile in tilesToPingPlayer1) 
-            { 
-                GameObject Ping = Instantiate(PrefabPing);
-                Ping.transform.position = tile.transform.position;
-                PingsPlayer1.Add(Ping);
+            if (tilesToPingPlayer1.Count > 0) 
+            {
+                foreach (var tile in tilesToPingPlayer1)
+                {
+                    GameObject Ping = Instantiate(PrefabPing);
+                    Ping.transform.position = tile.transform.position;
+                    PingsPlayer1.Add(Ping);
+                }
+
             }
         }
         tilesToPingPlayer1LastFrame = tilesToPingPlayer1;
@@ -166,14 +170,17 @@ public class MovementPointManager : MonoBehaviour
 
     private void DrawPingListPlayer2()
     {
-        if (currentFrameFirstInTurn2 || (myTurn2 && tilesToPingPlayer2.Count > tilesToPingPlayer2LastFrame.Count))
+        if (currentFrameFirstInTurn2 || Commander1Found)
         {
             DeletePings(PingsPlayer2);
-            foreach (var tile in tilesToPingPlayer2)
+            if (tilesToPingPlayer2.Count > 0)
             {
-                GameObject Ping = Instantiate(PrefabPing);
-                Ping.transform.position = tile.transform.position;
-                PingsPlayer2.Add(Ping);
+                foreach (var tile in tilesToPingPlayer2)
+                {
+                    GameObject Ping = Instantiate(PrefabPing);
+                    Ping.transform.position = tile.transform.position;
+                    PingsPlayer2.Add(Ping);
+                }
             }
         }
         tilesToPingPlayer2LastFrame = tilesToPingPlayer2;
@@ -203,9 +210,13 @@ public class MovementPointManager : MonoBehaviour
     }
     private void DeletePings(List<GameObject> pingsPlayer)
     {
-        for (int i = pingsPlayer.Count-1; i >= 0; i--)
+        if (pingsPlayer.Count > 0)
         {
-            GameObject.Destroy(pingsPlayer[i]);
+            for (int i = pingsPlayer.Count - 1; i >= 0; i--)
+            {
+                GameObject.Destroy(pingsPlayer[i]);
+                pingsPlayer.Remove(pingsPlayer[i]);
+            }
         }
     }
 

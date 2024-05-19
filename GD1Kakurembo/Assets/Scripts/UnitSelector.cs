@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using static CharacterProperties;
 
 
 public class UnitSelector : MonoBehaviour
@@ -209,7 +210,7 @@ public class UnitSelector : MonoBehaviour
     {
         //if (!tileIsClicked)
         {
-            movementPoolCurrentSelectedUnit.MovementPoolCurrent -= movementCostCurrentAimingTile; //could this be the problem???
+            movementPoolCurrentSelectedUnit.MovementPoolCurrent -= movementCostCurrentAimingTile; 
 
             CaclulateAndGiveMotivation(hit);
             PingThings(hit);
@@ -264,7 +265,7 @@ public class UnitSelector : MonoBehaviour
 
     private void CaclulateAndGiveMotivation(RaycastHit hit)
     {
-        if (CheckIfDifferentTileType(hit.transform.gameObject, currentTileSelectedUnit))
+        if (CheckIfDifferentTileType(hit.transform.gameObject, currentTileSelectedUnit) && clickedObject.GetComponent<CharacterProperties>().unitMovementpoolType == UnitMovementPool.Commander)
         {
             if (hit.transform.gameObject.GetComponent<TileProperties>().tileType == TileProperties.TileType.ForestTile)
             {
