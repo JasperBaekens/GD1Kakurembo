@@ -84,8 +84,9 @@ public class MovementPointManager : MonoBehaviour
     public MovementPool MovementPoolCommanderPlayer2;
 
 
-
-
+    //Deselect all units on first frame in turn
+    public UnitSelector UnitselectorPlayer1;
+    public UnitSelector UnitselectorPlayer2;
 
     private void Update()
     {
@@ -110,7 +111,22 @@ public class MovementPointManager : MonoBehaviour
         DrawPingListPlayer1();
         DrawPingListPlayer2();
 
+        DeslectCurrentUnits();
+    }
 
+    private void DeslectCurrentUnits()
+    {
+        if (currentFrameFirstInTurn1 || currentFrameFirstInTurn2)
+        {
+            if (UnitselectorPlayer1.clickedObject != null) 
+            {
+                UnitselectorPlayer1.DeselectCurrentSelectedUnit();
+            }
+            if (UnitselectorPlayer2.clickedObject != null)
+            {
+                UnitselectorPlayer2.DeselectCurrentSelectedUnit();
+            }
+        }
     }
 
     private void CheckForScoutCommanderInteraction()

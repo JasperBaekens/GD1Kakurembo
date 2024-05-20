@@ -21,12 +21,12 @@ public class UnitSelector : MonoBehaviour
     public string characterTag;
     
     //movemntfix
-    private GameObject currentTileSelectedUnit;
+    public GameObject currentTileSelectedUnit;
     private TileProperties.TileType currentTileSelectedUnitType;
-    private GameObject aimingTile;
+    public GameObject aimingTile;
 
     //private bool IsNextTileAllowed = false; //could do messages with this
-    private float movementCostCurrentAimingTile;
+    public float movementCostCurrentAimingTile;
     private MovementPool movementPoolCurrentSelectedUnit;
     private MovementPointManager movementPointManager;
 
@@ -68,11 +68,19 @@ public class UnitSelector : MonoBehaviour
         { //IF we have hit something
             if (Input.GetMouseButtonDown(0) && clickedObject != null && clickedObject == hit.transform.gameObject)
             {
+                DeselectCurrentSelectedUnit();
+            }
+            else if (Input.GetMouseButtonDown(0) && clickedObject != hit.transform.gameObject && clickedObject != null && hit.transform.gameObject.CompareTag(characterTag))
+            {
                 clickedObject.GetComponent<MeshRenderer>().material = materialHighlightClickedBefore;
                 clickedObject = null;
-                DeClickHappened = true;
-            }
 
+                HoverRestoreCurrentObject();
+                clickedObject = hit.transform.gameObject;
+                materialHighlightClickedBefore = clickedObject.GetComponent<MeshRenderer>().material;
+                clickedObject.GetComponent<MeshRenderer>().material = materialHighlightClicked;
+
+            }
             else if (Input.GetMouseButtonDown(0) && clickedObject != hit.transform.gameObject && clickedObject == null && hit.transform.gameObject.CompareTag(characterTag))
             {
                 HoverRestoreCurrentObject();
@@ -84,6 +92,12 @@ public class UnitSelector : MonoBehaviour
         }
     }
 
+    public void DeselectCurrentSelectedUnit()
+    {
+        clickedObject.GetComponent<MeshRenderer>().material = materialHighlightClickedBefore;
+        clickedObject = null;
+        DeClickHappened = true;
+    }
 
     private void HoverHighlight() //was here pre movementfix attempt
     {
@@ -139,41 +153,43 @@ public class UnitSelector : MonoBehaviour
 
         if (Physics.Raycast(r, out hit))
         { //IF we have hit something
-            if (hit.transform.gameObject != currentTileSelectedUnit && hit.transform.gameObject.CompareTag("Tile")) //just aiming
+            if (hit.transform.gameObject.CompareTag("Tile")) //just aiming
             {
-
                 aimingTile = hit.transform.gameObject;
-
-                if (CheckIfTileAdjacent(hit))
+                if (hit.transform.gameObject != currentTileSelectedUnit)
                 {
-                    //IsNextTileAllowed = true;
-                    if (CheckIfDifferentTileType(aimingTile, currentTileSelectedUnit))
+                    if (CheckIfTileAdjacent(hit))
                     {
-                        movementCostCurrentAimingTile = 1f;
-                    }
-                    else
-                    {
-                        switch (currentTileSelectedUnitType)
+                        //IsNextTileAllowed = true;
+                        if (CheckIfDifferentTileType(aimingTile, currentTileSelectedUnit))
                         {
-                            case TileProperties.TileType.RoadTile:
-                                movementCostCurrentAimingTile = 0.5f;
-                                break;
-                            case TileProperties.TileType.WaterTile:
-                                movementCostCurrentAimingTile = 1f;
-                                break;
-                            case TileProperties.TileType.BaseTile:
-                                movementCostCurrentAimingTile = 2f;
-                                break;
-                            default:
-                                movementCostCurrentAimingTile = 1f;
-                                break;
+                            movementCostCurrentAimingTile = 1f;
+                        }
+                        else
+                        {
+                            switch (currentTileSelectedUnitType)
+                            {
+                                case TileProperties.TileType.RoadTile:
+                                    movementCostCurrentAimingTile = 0.5f;
+                                    break;
+                                case TileProperties.TileType.WaterTile:
+                                    movementCostCurrentAimingTile = 1f;
+                                    break;
+                                case TileProperties.TileType.BaseTile:
+                                    movementCostCurrentAimingTile = 2f;
+                                    break;
+                                default:
+                                    movementCostCurrentAimingTile = 1f;
+                                    break;
+                            }
                         }
                     }
-                }
-                else
-                {
-                    //IsNextTileAllowed = false;
-                    //communicate not allowed move
+
+                    else
+                    {
+                        //IsNextTileAllowed = false;
+                        //communicate not allowed move
+                    }
                 }
                 //Can do preemptive messages/options here before player clicks another tile
             }
@@ -191,7 +207,7 @@ public class UnitSelector : MonoBehaviour
         }
     }
 
-    private bool CheckIfEnoughMovementCostLeft()
+    public bool CheckIfEnoughMovementCostLeft()
     {
         return (movementCostCurrentAimingTile <= movementPoolCurrentSelectedUnit.MovementPoolCurrent);
     }
@@ -204,6 +220,10 @@ public class UnitSelector : MonoBehaviour
     private bool CheckIfTileAdjacent(RaycastHit hit)
     {
         return (hit.transform.position == currentTileSelectedUnit.transform.position + Vector3.right || hit.transform.position == currentTileSelectedUnit.transform.position + Vector3.left || hit.transform.position == currentTileSelectedUnit.transform.position + Vector3.forward || hit.transform.position == currentTileSelectedUnit.transform.position + Vector3.back);
+    }
+    public bool CheckIfTileAdjacentGO(GameObject aim)
+    {
+        return (aim.transform.position == currentTileSelectedUnit.transform.position + Vector3.right || aim.transform.position == currentTileSelectedUnit.transform.position + Vector3.left || aim.transform.position == currentTileSelectedUnit.transform.position + Vector3.forward || aim.transform.position == currentTileSelectedUnit.transform.position + Vector3.back);
     }
 
     private void MoveToNewTile(RaycastHit hit)
