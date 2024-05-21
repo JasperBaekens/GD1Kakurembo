@@ -30,6 +30,8 @@ public class UnitSelector : MonoBehaviour
     private MovementPool movementPoolCurrentSelectedUnit;
     private MovementPointManager movementPointManager;
 
+    public bool MouseOnTile = false;
+
     private void Awake()
     {
         movementPointManager = FindObjectOfType<MovementPointManager>();
@@ -155,6 +157,7 @@ public class UnitSelector : MonoBehaviour
         { //IF we have hit something
             if (hit.transform.gameObject.CompareTag("Tile")) //just aiming
             {
+                MouseOnTile = true;
                 aimingTile = hit.transform.gameObject;
                 if (hit.transform.gameObject != currentTileSelectedUnit)
                 {
@@ -193,6 +196,10 @@ public class UnitSelector : MonoBehaviour
                 }
                 //Can do preemptive messages/options here before player clicks another tile
             }
+            else
+            {
+                MouseOnTile = false;
+            }
 
             if (Input.GetMouseButtonDown(0) && currentTileSelectedUnit != aimingTile && clickedObject != null && hit.transform.gameObject.CompareTag("Tile")) // also condition for leftover motivation
             {
@@ -204,6 +211,10 @@ public class UnitSelector : MonoBehaviour
                 }
 
             }
+        }
+        else
+        {
+            MouseOnTile = false;
         }
     }
 

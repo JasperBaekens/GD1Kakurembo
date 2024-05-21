@@ -30,7 +30,7 @@ public class MovementCostFeedback : MonoBehaviour
         switch (attachedPlayer)
         {
             case PlayerSelector.Player1:
-                if (UnitselectorPlayer1.clickedObject && UnitselectorPlayer1.aimingTile && UnitselectorPlayer1.aimingTile != UnitselectorPlayer1.currentTileSelectedUnit && UnitselectorPlayer1.CheckIfTileAdjacentGO(UnitselectorPlayer1.aimingTile))
+                if (UnitselectorPlayer1.MouseOnTile && UnitselectorPlayer1.clickedObject && UnitselectorPlayer1.aimingTile && UnitselectorPlayer1.aimingTile != UnitselectorPlayer1.currentTileSelectedUnit && UnitselectorPlayer1.CheckIfTileAdjacentGO(UnitselectorPlayer1.aimingTile))
                 {
                     MovementCostFeedbackText.text = UnitselectorPlayer1.movementCostCurrentAimingTile.ToString();
                     MovementCostFeedbackText.rectTransform.position = Input.mousePosition;
@@ -49,7 +49,7 @@ public class MovementCostFeedback : MonoBehaviour
                 }
                 break;
             case PlayerSelector.Player2:
-                if (UnitselectorPlayer2.clickedObject && UnitselectorPlayer2.aimingTile && UnitselectorPlayer2.aimingTile != UnitselectorPlayer2.currentTileSelectedUnit && UnitselectorPlayer2.CheckIfTileAdjacentGO(UnitselectorPlayer2.aimingTile))
+                if (UnitselectorPlayer2.MouseOnTile && UnitselectorPlayer2.clickedObject && UnitselectorPlayer2.aimingTile && UnitselectorPlayer2.aimingTile != UnitselectorPlayer2.currentTileSelectedUnit && UnitselectorPlayer2.CheckIfTileAdjacentGO(UnitselectorPlayer2.aimingTile))
                 {
                     MovementCostFeedbackText.text = UnitselectorPlayer2.movementCostCurrentAimingTile.ToString();
                     MovementCostFeedbackText.rectTransform.position = Input.mousePosition;
