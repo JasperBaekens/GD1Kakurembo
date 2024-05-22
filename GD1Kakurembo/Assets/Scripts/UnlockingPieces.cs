@@ -9,43 +9,18 @@ public class UnlockingPieces : MonoBehaviour
     [SerializeField]
     private GameObject[] _unlockablePiecesP2;
 
-    public int _currentTurn = 1;
+    public int _currentTurn = 0;
 
     // Update is called once per frame
     void Update()
     {
-
-        if (_currentTurn / 2 % 2 == 0)
-        {
-            Debug.Log("P1");
-            if (_unlockablePiecesP1 != null)
-                for (int i = 0; i < _unlockablePiecesP1.Length - 1; i++)
-                {
-                    if (!_unlockablePiecesP1[i].gameObject.active)
-                    {
-
-                        _unlockablePiecesP1[i].gameObject?.SetActive(true);
-                        break;
-                    }
-
-                }
-
-        }
-        else
-        {
-            Debug.Log("P2");
-            if (_unlockablePiecesP2 != null)
-                for (int i = 0; i < _unlockablePiecesP2.Length - 1; i++)
-                {
-                    if (!_unlockablePiecesP2[i].gameObject.active)
-                    {
-
-                        _unlockablePiecesP2[i].gameObject?.SetActive(true);
-                        break;
-                    }
-
-                }
-        }
-
+        if(_currentTurn == 3)
+            _unlockablePiecesP1[0].gameObject?.SetActive(true);
+        else if(_currentTurn == 5)
+            _unlockablePiecesP2[0].gameObject?.SetActive(true);
+        else if (_currentTurn == 7)
+            _unlockablePiecesP1[1].gameObject?.SetActive(true);
+        else if (_currentTurn == 9)
+            _unlockablePiecesP2[1].gameObject?.SetActive(true);
     }
 }

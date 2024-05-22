@@ -302,12 +302,12 @@ GameObject:
   m_Component:
   - component: {fileID: 60131306}
   m_Layer: 0
-  m_Name: Spies
+  m_Name: SpiesP2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &60131306
 Transform:
   m_ObjectHideFlags: 0
@@ -2236,12 +2236,12 @@ GameObject:
   m_Component:
   - component: {fileID: 438221560}
   m_Layer: 0
-  m_Name: Spies
+  m_Name: SpiesP1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &438221560
 Transform:
   m_ObjectHideFlags: 0
@@ -3505,6 +3505,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ArmyP1
       objectReference: {fileID: 0}
+    - target: {fileID: 2872535741915781866, guid: 0a0caaf3f9a0c2e47bbd462e1292a8b2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3684882165928592073, guid: 0a0caaf3f9a0c2e47bbd462e1292a8b2, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -3764,6 +3768,10 @@ PrefabInstance:
     - target: {fileID: 2872535741915781866, guid: 0a0caaf3f9a0c2e47bbd462e1292a8b2, type: 3}
       propertyPath: m_Name
       value: ArmyP2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2872535741915781866, guid: 0a0caaf3f9a0c2e47bbd462e1292a8b2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3684882165928592073, guid: 0a0caaf3f9a0c2e47bbd462e1292a8b2, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -5204,6 +5212,7 @@ GameObject:
   - component: {fileID: 1029305507}
   - component: {fileID: 1029305506}
   - component: {fileID: 1029305505}
+  - component: {fileID: 1029305510}
   - component: {fileID: 1029305508}
   - component: {fileID: 1029305509}
   m_Layer: 0
@@ -5338,6 +5347,25 @@ MonoBehaviour:
   _player1WinScreen: {fileID: 1555550665}
   _player2WinScreen: {fileID: 944495586}
   _disableAtEndOfGame: []
+--- !u!114 &1029305510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1029305503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2692733b30f0bba46aa245816d953171, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _unlockablePiecesP1:
+  - {fileID: 782076450}
+  - {fileID: 438221559}
+  _unlockablePiecesP2:
+  - {fileID: 678639088}
+  - {fileID: 60131305}
+  _currentTurn: 0
 --- !u!1001 &1029834256
 PrefabInstance:
   m_ObjectHideFlags: 0
