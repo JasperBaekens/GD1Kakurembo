@@ -32,6 +32,7 @@ public class MovementPointManager : MonoBehaviour
     public List<GameObject> tilesToPingPlayer1;
     public List<GameObject> PingsPlayer1;
     public List<GameObject> tilesToPingPlayer1LastFrame;
+    public List<GameObject> tilesToPingPlayer1SpyCommand;
 
 
     //player2
@@ -59,11 +60,13 @@ public class MovementPointManager : MonoBehaviour
     public List<GameObject> tilesToPingPlayer2;
     public List<GameObject> PingsPlayer2;
     public List<GameObject> tilesToPingPlayer2LastFrame;
+    public List<GameObject> tilesToPingPlayer2SpyCommand;
 
 
 
     //overal
-    public GameObject PrefabPing;
+    public GameObject PrefabPing; 
+    public GameObject PrefabPingSpyComm;
     public int TurnCounter;
 
     public bool Player1Won = false;
@@ -149,6 +152,10 @@ public class MovementPointManager : MonoBehaviour
             Commander1Found = true;
             tilesToPingPlayer2.Add(CommanderPlayer1.GetComponent<CharacterProperties>().currentTile);
             tilesToPingPlayer1.Add(CommanderPlayer1.GetComponent<CharacterProperties>().currentTile);
+
+            tilesToPingPlayer1SpyCommand.Add(CommanderPlayer1.GetComponent<CharacterProperties>().currentTile);
+            tilesToPingPlayer2SpyCommand.Add(CommanderPlayer1.GetComponent<CharacterProperties>().currentTile);
+
         }
         if (!Commander2Found &(
             CommanderPlayer2.GetComponent<CharacterProperties>().currentTile == Spy1Player1.GetComponent<CharacterProperties>().currentTile ||
@@ -159,6 +166,10 @@ public class MovementPointManager : MonoBehaviour
             Commander2Found = true;
             tilesToPingPlayer2.Add(CommanderPlayer2.GetComponent<CharacterProperties>().currentTile);
             tilesToPingPlayer1.Add(CommanderPlayer2.GetComponent<CharacterProperties>().currentTile);
+
+            tilesToPingPlayer1SpyCommand.Add(CommanderPlayer2.GetComponent<CharacterProperties>().currentTile);
+            tilesToPingPlayer2SpyCommand.Add(CommanderPlayer2.GetComponent<CharacterProperties>().currentTile);
+
         }
 
 
@@ -179,6 +190,15 @@ public class MovementPointManager : MonoBehaviour
                     PingsPlayer1.Add(Ping);
                 }
 
+                foreach (var tile in tilesToPingPlayer1SpyCommand)
+                {
+                    GameObject Ping = Instantiate(PrefabPingSpyComm);
+                    Ping.transform.position = tile.transform.position;
+                    PingsPlayer1.Add(Ping);
+                }
+
+
+
             }
         }
         tilesToPingPlayer1LastFrame = tilesToPingPlayer1;
@@ -197,6 +217,14 @@ public class MovementPointManager : MonoBehaviour
                     Ping.transform.position = tile.transform.position;
                     PingsPlayer2.Add(Ping);
                 }
+
+                foreach (var tile in tilesToPingPlayer2SpyCommand)
+                {
+                    GameObject Ping = Instantiate(PrefabPingSpyComm);
+                    Ping.transform.position = tile.transform.position;
+                    PingsPlayer2.Add(Ping);
+                }
+
             }
         }
         tilesToPingPlayer2LastFrame = tilesToPingPlayer2;
@@ -210,6 +238,7 @@ public class MovementPointManager : MonoBehaviour
             DeletePings(PingsPlayer1);
             PingsPlayer1.Clear();
             tilesToPingPlayer1.Clear();
+            tilesToPingPlayer1SpyCommand.Clear();
         }
 
     }
@@ -222,6 +251,7 @@ public class MovementPointManager : MonoBehaviour
             DeletePings(PingsPlayer2);
             tilesToPingPlayer2.Clear();
             PingsPlayer2.Clear();
+            tilesToPingPlayer2SpyCommand.Clear();
         }
     }
     private void DeletePings(List<GameObject> pingsPlayer)

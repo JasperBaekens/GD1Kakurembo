@@ -2987,6 +2987,7 @@ MonoBehaviour:
   tilesToPingPlayer1: []
   PingsPlayer1: []
   tilesToPingPlayer1LastFrame: []
+  tilesToPingPlayer1SpyCommand: []
   myTurn2: 0
   previousFrameMyTurn2: 0
   currentFrameFirstInTurn2: 0
@@ -3004,7 +3005,9 @@ MonoBehaviour:
   tilesToPingPlayer2: []
   PingsPlayer2: []
   tilesToPingPlayer2LastFrame: []
+  tilesToPingPlayer2SpyCommand: []
   PrefabPing: {fileID: 7045096060257932230, guid: ffa772bd925f24b4988dc2e0f0a19e5e, type: 3}
+  PrefabPingSpyComm: {fileID: 7045096060257932230, guid: 7249543e490bba34db43f4766699dfe5, type: 3}
   TurnCounter: 0
   Player1Won: 0
   Player2Won: 0

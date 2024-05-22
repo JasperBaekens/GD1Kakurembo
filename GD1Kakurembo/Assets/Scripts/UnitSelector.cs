@@ -253,7 +253,7 @@ public class UnitSelector : MonoBehaviour
 
     private void PingThings(RaycastHit hit)
     {
-        if (CheckIfDifferentTileType(hit.transform.gameObject, currentTileSelectedUnit))
+        if (CheckIfDifferentTileType(hit.transform.gameObject, currentTileSelectedUnit) && clickedObject.GetComponent<CharacterProperties>().unitMovementpoolType != UnitMovementPool.Spy)
         {
             if (hit.transform.gameObject.GetComponent<TileProperties>().tileType == TileProperties.TileType.ForestTile)
             {
