@@ -3,28 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\jaspe\\Documents\\GitHub\\GD1Kakurembo\\GD1Kakurembo\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D751B955-29A1-98B0-3269-63BC13C6E192}|Assembly-CSharp.csproj|c:\\users\\jaspe\\documents\\github\\gd1kakurembo\\gd1kakurembo\\assets\\scripts\\unitselector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D751B955-29A1-98B0-3269-63BC13C6E192}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\unitselector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D751B955-29A1-98B0-3269-63BC13C6E192}|Assembly-CSharp.csproj|C:\\Users\\jaspe\\Documents\\GitHub\\GD1Kakurembo\\GD1Kakurembo\\assets\\scripts\\movementpointmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D751B955-29A1-98B0-3269-63BC13C6E192}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\movementpointmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D751B955-29A1-98B0-3269-63BC13C6E192}|Assembly-CSharp.csproj|C:\\Users\\jaspe\\Documents\\GitHub\\GD1Kakurembo\\GD1Kakurembo\\assets\\scripts\\movementpool.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D751B955-29A1-98B0-3269-63BC13C6E192}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\movementpool.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{D751B955-29A1-98B0-3269-63BC13C6E192}|Assembly-CSharp.csproj|C:\\Users\\jaspe\\Documents\\GitHub\\GD1Kakurembo\\GD1Kakurembo\\assets\\scripts\\displaymovementpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D751B955-29A1-98B0-3269-63BC13C6E192}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\displaymovementpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D751B955-29A1-98B0-3269-63BC13C6E192}|Assembly-CSharp.csproj|c:\\users\\jaspe\\documents\\github\\gd1kakurembo\\gd1kakurembo\\assets\\scripts\\unitselector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D751B955-29A1-98B0-3269-63BC13C6E192}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\unitselector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D751B955-29A1-98B0-3269-63BC13C6E192}|Assembly-CSharp.csproj|C:\\Users\\jaspe\\Documents\\GitHub\\GD1Kakurembo\\GD1Kakurembo\\assets\\scripts\\movementcostfeedback.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D751B955-29A1-98B0-3269-63BC13C6E192}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\movementcostfeedback.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D751B955-29A1-98B0-3269-63BC13C6E192}|Assembly-CSharp.csproj|C:\\Users\\jaspe\\Documents\\GitHub\\GD1Kakurembo\\GD1Kakurembo\\assets\\scripts\\audiomanagement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D751B955-29A1-98B0-3269-63BC13C6E192}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\audiomanagement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D751B955-29A1-98B0-3269-63BC13C6E192}|Assembly-CSharp.csproj|C:\\Users\\jaspe\\Documents\\GitHub\\GD1Kakurembo\\GD1Kakurembo\\assets\\scripts\\movementpool.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D751B955-29A1-98B0-3269-63BC13C6E192}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\movementpool.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D751B955-29A1-98B0-3269-63BC13C6E192}|Assembly-CSharp.csproj|C:\\Users\\jaspe\\Documents\\GitHub\\GD1Kakurembo\\GD1Kakurembo\\assets\\scripts\\movementpointmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D751B955-29A1-98B0-3269-63BC13C6E192}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\movementpointmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D751B955-29A1-98B0-3269-63BC13C6E192}|Assembly-CSharp.csproj|C:\\Users\\jaspe\\Documents\\GitHub\\GD1Kakurembo\\GD1Kakurembo\\assets\\scripts\\playerswitcher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -54,7 +50,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -62,56 +58,46 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "AudioManagement.cs",
-              "DocumentMoniker": "C:\\Users\\jaspe\\Documents\\GitHub\\GD1Kakurembo\\GD1Kakurembo\\Assets\\Scripts\\AudioManagement.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\AudioManagement.cs",
-              "ToolTip": "C:\\Users\\jaspe\\Documents\\GitHub\\GD1Kakurembo\\GD1Kakurembo\\Assets\\Scripts\\AudioManagement.cs",
-              "RelativeToolTip": "Assets\\Scripts\\AudioManagement.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
+              "DocumentIndex": 0,
+              "Title": "DisplayMovementPoints.cs",
+              "DocumentMoniker": "C:\\Users\\jaspe\\Documents\\GitHub\\GD1Kakurembo\\GD1Kakurembo\\Assets\\Scripts\\DisplayMovementPoints.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\DisplayMovementPoints.cs",
+              "ToolTip": "C:\\Users\\jaspe\\Documents\\GitHub\\GD1Kakurembo\\GD1Kakurembo\\Assets\\Scripts\\DisplayMovementPoints.cs",
+              "RelativeToolTip": "Assets\\Scripts\\DisplayMovementPoints.cs",
+              "ViewState": "AQIAACYAAAAAAAAAAAAqwCoAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-22T12:33:20.467Z"
+              "WhenOpened": "2024-05-14T20:02:48.497Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "MovementPointManager.cs",
               "DocumentMoniker": "C:\\Users\\jaspe\\Documents\\GitHub\\GD1Kakurembo\\GD1Kakurembo\\Assets\\Scripts\\MovementPointManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\MovementPointManager.cs",
               "ToolTip": "C:\\Users\\jaspe\\Documents\\GitHub\\GD1Kakurembo\\GD1Kakurembo\\Assets\\Scripts\\MovementPointManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\MovementPointManager.cs",
-              "ViewState": "AQIAALwAAAAAAAAAAAAgwAMAAAAhAAAA",
+              "ViewState": "AQIAAEMBAAAAAAAAAAA6wFoAAAAnAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-12T11:26:57.486Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "MovementCostFeedback.cs",
               "DocumentMoniker": "C:\\Users\\jaspe\\Documents\\GitHub\\GD1Kakurembo\\GD1Kakurembo\\Assets\\Scripts\\MovementCostFeedback.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\MovementCostFeedback.cs",
               "ToolTip": "C:\\Users\\jaspe\\Documents\\GitHub\\GD1Kakurembo\\GD1Kakurembo\\Assets\\Scripts\\MovementCostFeedback.cs",
               "RelativeToolTip": "Assets\\Scripts\\MovementCostFeedback.cs",
-              "ViewState": "AQIAAB4AAAAAAAAAAAAYwDgAAAAVAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB8AAAAoAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-20T22:26:44.773Z"
+              "WhenOpened": "2024-05-20T22:26:44.773Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "DisplayMovementPoints.cs",
-              "DocumentMoniker": "C:\\Users\\jaspe\\Documents\\GitHub\\GD1Kakurembo\\GD1Kakurembo\\Assets\\Scripts\\DisplayMovementPoints.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\DisplayMovementPoints.cs",
-              "ToolTip": "C:\\Users\\jaspe\\Documents\\GitHub\\GD1Kakurembo\\GD1Kakurembo\\Assets\\Scripts\\DisplayMovementPoints.cs",
-              "RelativeToolTip": "Assets\\Scripts\\DisplayMovementPoints.cs",
-              "ViewState": "AQIAABQAAAAAAAAAAAAAwCQAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-14T20:02:48.497Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "MovementPool.cs",
               "DocumentMoniker": "C:\\Users\\jaspe\\Documents\\GitHub\\GD1Kakurembo\\GD1Kakurembo\\Assets\\Scripts\\MovementPool.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\MovementPool.cs",
@@ -119,24 +105,25 @@
               "RelativeToolTip": "Assets\\Scripts\\MovementPool.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAASAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-18T15:21:02.199Z"
+              "WhenOpened": "2024-05-18T15:21:02.199Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "UnitSelector.cs",
               "DocumentMoniker": "C:\\Users\\jaspe\\Documents\\GitHub\\GD1Kakurembo\\GD1Kakurembo\\Assets\\Scripts\\UnitSelector.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\UnitSelector.cs",
               "ToolTip": "C:\\Users\\jaspe\\Documents\\GitHub\\GD1Kakurembo\\GD1Kakurembo\\Assets\\Scripts\\UnitSelector.cs",
               "RelativeToolTip": "Assets\\Scripts\\UnitSelector.cs",
-              "ViewState": "AQIAAPYAAAAAAAAAAAAgwAMBAAAxAAAA",
+              "ViewState": "AQIAAPYAAAAAAAAAAAAgwAUBAABaAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-08T15:06:41.435Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 5,
               "Title": "PlayerSwitcher.cs",
               "DocumentMoniker": "C:\\Users\\jaspe\\Documents\\GitHub\\GD1Kakurembo\\GD1Kakurembo\\Assets\\Scripts\\PlayerSwitcher.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerSwitcher.cs",
@@ -148,7 +135,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 6,
               "Title": "CharacterProperties.cs",
               "DocumentMoniker": "C:\\Users\\jaspe\\Documents\\GitHub\\GD1Kakurembo\\GD1Kakurembo\\Assets\\Scripts\\CharacterProperties.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\CharacterProperties.cs",
@@ -160,7 +147,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 7,
               "Title": "DiceRoll.cs",
               "DocumentMoniker": "C:\\Users\\jaspe\\Documents\\GitHub\\GD1Kakurembo\\GD1Kakurembo\\Assets\\Scripts\\DiceRoll.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\DiceRoll.cs",
@@ -172,7 +159,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 8,
               "Title": "TestMotivationVariable.cs",
               "DocumentMoniker": "C:\\Users\\jaspe\\Documents\\GitHub\\GD1Kakurembo\\GD1Kakurembo\\Assets\\Scripts\\TestMotivationVariable.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\TestMotivationVariable.cs",
@@ -184,7 +171,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 9,
               "Title": "TileProperties.cs",
               "DocumentMoniker": "C:\\Users\\jaspe\\Documents\\GitHub\\GD1Kakurembo\\GD1Kakurembo\\Assets\\Scripts\\TileProperties.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\TileProperties.cs",

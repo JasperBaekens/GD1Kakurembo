@@ -304,9 +304,9 @@ public class MovementPointManager : MonoBehaviour
     {
         if (currentFrameFirstInTurn1) //make this talk with diceresults!!!!!
         {
-            commanderDiceResult1 = UnityEngine.Random.Range(1, 6);
-            spysDiceResult1 = UnityEngine.Random.Range(1, 6);
-            armyDiceResult1 = UnityEngine.Random.Range(1, 6);
+            commanderDiceResult1 = UnityEngine.Random.Range(2, 6);
+            spysDiceResult1 = UnityEngine.Random.Range(2, 6);
+            armyDiceResult1 = UnityEngine.Random.Range(2, 6);
         }
     }
 
@@ -314,9 +314,9 @@ public class MovementPointManager : MonoBehaviour
     {
         if (currentFrameFirstInTurn2) //make this talk with diceresults!!!!!
         {
-            commanderDiceResult2 = UnityEngine.Random.Range(1, 6);
-            spysDiceResult2 = UnityEngine.Random.Range(1, 6);
-            armyDiceResult2 = UnityEngine.Random.Range(1, 6);
+            commanderDiceResult2 = UnityEngine.Random.Range(2, 6);
+            spysDiceResult2 = UnityEngine.Random.Range(2, 6);
+            armyDiceResult2 = UnityEngine.Random.Range(2, 6);
         }
     }
 

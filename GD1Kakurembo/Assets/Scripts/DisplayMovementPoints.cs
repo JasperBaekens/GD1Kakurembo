@@ -3,10 +3,15 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using static CharacterProperties;
+using static System.Net.Mime.MediaTypeNames;
 
 public class DisplayMovementPoints : MonoBehaviour
 {
-    public TextMeshProUGUI MovementLeftOfUnit;
+    public TextMeshProUGUI MovementPoolSpyUI;
+    public TextMeshProUGUI MovementPoolCommanderUI;
+    public TextMeshProUGUI MovementPoolArmyUI;
+
     public MovementPointManager MovementPointManager;
     public PlayerSelector attachedPlayer;
 
@@ -33,13 +38,69 @@ public class DisplayMovementPoints : MonoBehaviour
 
     public void Update()
     {
+        //color currentUnit
         switch (attachedPlayer)
         {
             case PlayerSelector.Player1:
-                MovementLeftOfUnit.text = $"General Movement Points: {MovementPoolCommanderPlayer1.MovementPoolCurrent}\nArmy Movement Points: {MovementPoolArmyPlayer1.MovementPoolCurrent}\nSpies Movement Points: {MovementPoolSpyPlayer1.MovementPoolCurrent}";
+                MovementPoolCommanderUI.color = new Vector4(0.7607843f, 0.308064f, 0.2470588f, 1);
+                MovementPoolArmyUI.color = new Vector4(0.7607843f, 0.308064f, 0.2470588f, 1);
+                MovementPoolSpyUI.color = new Vector4(0.7607843f, 0.308064f, 0.2470588f, 1);
+
+                if (MovementPointManager.UnitselectorPlayer1.clickedObject != null)
+                {
+                    if (MovementPointManager.UnitselectorPlayer1.clickedObject.GetComponent<CharacterProperties>().unitMovementpoolType == UnitMovementPool.Commander)
+                    {
+                        MovementPoolCommanderUI.color = new Vector4(0.7250586f, 0.5554566f, 0.8616352f, 1);
+                    }
+                    else if (MovementPointManager.UnitselectorPlayer1.clickedObject.GetComponent<CharacterProperties>().unitMovementpoolType == UnitMovementPool.Army)
+                    {
+                        MovementPoolArmyUI.color = new Vector4(0.7250586f, 0.5554566f, 0.8616352f, 1);
+                    }
+                    else if (MovementPointManager.UnitselectorPlayer1.clickedObject.GetComponent<CharacterProperties>().unitMovementpoolType == UnitMovementPool.Spy)
+                    {
+                        MovementPoolSpyUI.color = new Vector4(0.7250586f, 0.5554566f, 0.8616352f, 1);
+                    }
+                }
+
                 break;
             case PlayerSelector.Player2:
-                MovementLeftOfUnit.text = $"General Movement Points: {MovementPoolCommanderPlayer2.MovementPoolCurrent}\nArmy Movement Points: {MovementPoolArmyPlayer2.MovementPoolCurrent}\nSpies Movement Points: {MovementPoolSpyPlayer2.MovementPoolCurrent}";
+                MovementPoolCommanderUI.color = new Vector4(0.334065f, 0.4513354f, 0.7987421f, 1);
+                MovementPoolArmyUI.color = new Vector4(0.334065f, 0.4513354f, 0.7987421f, 1);
+                MovementPoolSpyUI.color = new Vector4(0.334065f, 0.4513354f, 0.7987421f, 1);
+
+                if (MovementPointManager.UnitselectorPlayer2.clickedObject != null)
+                {
+
+                    if (MovementPointManager.UnitselectorPlayer2.clickedObject.GetComponent<CharacterProperties>().unitMovementpoolType == UnitMovementPool.Commander)
+                    {
+                        MovementPoolCommanderUI.color = new Vector4(0.7250586f, 0.5554566f, 0.8616352f, 1);
+                    }
+                    else if (MovementPointManager.UnitselectorPlayer2.clickedObject.GetComponent<CharacterProperties>().unitMovementpoolType == UnitMovementPool.Army)
+                    {
+                        MovementPoolArmyUI.color = new Vector4(0.7250586f, 0.5554566f, 0.8616352f, 1);
+                    }
+                    else if (MovementPointManager.UnitselectorPlayer2.clickedObject.GetComponent<CharacterProperties>().unitMovementpoolType == UnitMovementPool.Spy)
+                    {
+                        MovementPoolSpyUI.color = new Vector4(0.7250586f, 0.5554566f, 0.8616352f, 1);
+                    }
+                }
+                break;
+        }
+
+
+
+        //display
+        switch (attachedPlayer)
+        {
+            case PlayerSelector.Player1:
+                MovementPoolCommanderUI.text = $"General Movement Points: {MovementPoolCommanderPlayer1.MovementPoolCurrent}";
+                MovementPoolArmyUI.text = $"Army Movement Points: {MovementPoolArmyPlayer1.MovementPoolCurrent}";
+                MovementPoolSpyUI.text = $"Spies Movement Points: {MovementPoolSpyPlayer1.MovementPoolCurrent}";
+                break;
+            case PlayerSelector.Player2:
+                MovementPoolCommanderUI.text = $"General Movement Points: {MovementPoolCommanderPlayer2.MovementPoolCurrent}";
+                MovementPoolArmyUI.text = $"Army Movement Points: {MovementPoolArmyPlayer2.MovementPoolCurrent}";
+                MovementPoolSpyUI.text = $"Spies Movement Points: {MovementPoolSpyPlayer2.MovementPoolCurrent}";
                 break;
         }
     }
