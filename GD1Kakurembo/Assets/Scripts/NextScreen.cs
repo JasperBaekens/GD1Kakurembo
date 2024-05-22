@@ -18,5 +18,6 @@ public class NextScreen : MonoBehaviour
     void NextScreenCode()
     {
         _canvas.GetComponent<CameraSwitcher>()._currentStep++;
+        _canvas.GetComponent<UnlockingPieces>()._currentTurn++;
     }
 }
