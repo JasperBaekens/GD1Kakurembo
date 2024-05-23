@@ -93,12 +93,12 @@ public class DisplayMovementPoints : MonoBehaviour
         switch (attachedPlayer)
         {
             case PlayerSelector.Player1:
-                MovementPoolCommanderUI.text = $"General Movement Points: {MovementPoolCommanderPlayer1.MovementPoolCurrent}";
+                MovementPoolCommanderUI.text = $"The General Movement Points: {MovementPoolCommanderPlayer1.MovementPoolCurrent}";
                 MovementPoolArmyUI.text = $"Army Movement Points: {MovementPoolArmyPlayer1.MovementPoolCurrent}";
                 MovementPoolSpyUI.text = $"Spies Movement Points: {MovementPoolSpyPlayer1.MovementPoolCurrent}";
                 break;
             case PlayerSelector.Player2:
-                MovementPoolCommanderUI.text = $"General Movement Points: {MovementPoolCommanderPlayer2.MovementPoolCurrent}";
+                MovementPoolCommanderUI.text = $"The General Movement Points: {MovementPoolCommanderPlayer2.MovementPoolCurrent}";
                 MovementPoolArmyUI.text = $"Army Movement Points: {MovementPoolArmyPlayer2.MovementPoolCurrent}";
                 MovementPoolSpyUI.text = $"Spies Movement Points: {MovementPoolSpyPlayer2.MovementPoolCurrent}";
                 break;

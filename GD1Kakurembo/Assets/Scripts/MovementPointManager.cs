@@ -268,11 +268,12 @@ public class MovementPointManager : MonoBehaviour
 
     private void UpdateMotivation()
     {
-        if (currentFrameFirstInTurn1)
-            motivationCurrentPlayer1 -= MotivationDecreasePerTurn;
+        if (currentFrameFirstInTurn1 && TurnCounter != 1)
+            motivationCurrentPlayer2 -= MotivationDecreasePerTurn;
 
         if (currentFrameFirstInTurn2)
-            motivationCurrentPlayer2 -= MotivationDecreasePerTurn;
+            motivationCurrentPlayer1 -= MotivationDecreasePerTurn;
+
 
         if (playerOverall1.activeSelf)
         {
