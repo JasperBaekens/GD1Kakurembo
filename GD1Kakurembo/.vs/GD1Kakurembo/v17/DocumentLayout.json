@@ -3,7 +3,7 @@
   "WorkspaceRootPath": "C:\\Users\\jaspe\\Documents\\GitHub\\GD1Kakurembo\\GD1Kakurembo\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D751B955-29A1-98B0-3269-63BC13C6E192}|Assembly-CSharp.csproj|C:\\Users\\jaspe\\Documents\\GitHub\\GD1Kakurembo\\GD1Kakurembo\\assets\\scripts\\pointingatstuff.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{D751B955-29A1-98B0-3269-63BC13C6E192}|Assembly-CSharp.csproj|c:\\users\\jaspe\\documents\\github\\gd1kakurembo\\gd1kakurembo\\assets\\scripts\\pointingatstuff.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D751B955-29A1-98B0-3269-63BC13C6E192}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\pointingatstuff.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -68,7 +68,7 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\PointingAtStuff.cs",
               "ToolTip": "C:\\Users\\jaspe\\Documents\\GitHub\\GD1Kakurembo\\GD1Kakurembo\\Assets\\Scripts\\PointingAtStuff.cs",
               "RelativeToolTip": "Assets\\Scripts\\PointingAtStuff.cs",
-              "ViewState": "AQIAABsBAAAAAAAAAAAAADIBAAA0AAAA",
+              "ViewState": "AQIAADsAAAAAAAAAAAAqwD0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-22T15:11:47.543Z",
               "EditorCaption": ""
@@ -83,8 +83,7 @@
               "RelativeToolTip": "Assets\\Scripts\\DisplayMovementPoints.cs",
               "ViewState": "AQIAAC0AAAAAAAAAAAAYwGoAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-14T20:02:48.497Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-14T20:02:48.497Z"
             },
             {
               "$type": "Document",
@@ -96,8 +95,7 @@
               "RelativeToolTip": "Assets\\Scripts\\MovementPointManager.cs",
               "ViewState": "AQIAAAMAAAAAAAAAAAAmwA8BAABCAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-12T11:26:57.486Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-12T11:26:57.486Z"
             },
             {
               "$type": "Document",
@@ -109,8 +107,7 @@
               "RelativeToolTip": "Assets\\Scripts\\MovementPool.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAASAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-18T15:21:02.199Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-18T15:21:02.199Z"
             },
             {
               "$type": "Document",
@@ -122,8 +119,7 @@
               "RelativeToolTip": "Assets\\Scripts\\UnitSelector.cs",
               "ViewState": "AQIAAA4AAAAAAAAAAAAowBgAAABAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-08T15:06:41.435Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-08T15:06:41.435Z"
             },
             {
               "$type": "Document",
@@ -135,8 +131,7 @@
               "RelativeToolTip": "Assets\\Scripts\\PlayerSwitcher.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAUAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-15T14:33:27.068Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-15T14:33:27.068Z"
             },
             {
               "$type": "Document",
@@ -148,8 +143,7 @@
               "RelativeToolTip": "Assets\\Scripts\\CharacterProperties.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-08T14:49:42.041Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-08T14:49:42.041Z"
             },
             {
               "$type": "Document",
@@ -161,8 +155,7 @@
               "RelativeToolTip": "Assets\\Scripts\\MovementCostFeedback.cs",
               "ViewState": "AQIAAAYAAAAAAAAAAAAAAB8AAAAoAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-20T22:26:44.773Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-20T22:26:44.773Z"
             },
             {
               "$type": "Document",
