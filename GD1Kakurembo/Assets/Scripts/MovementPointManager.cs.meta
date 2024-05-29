@@ -3,7 +3,31 @@ guid: ef2a1981a8abbd24abbfe9411ec4753a
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - CommanderFoundPingAudio: {fileID: 8300000, guid: 42f197cc58e41c24d96a08a2672f5981, type: 3}
+  - WinnerAudio: {fileID: 8300000, guid: 96079c97a1704ec479a7bfa9ff839f45, type: 3}
+  - playerOverall1: {instanceID: 0}
+  - CommanderPlayer1: {instanceID: 0}
+  - ArmyPlayer1: {instanceID: 0}
+  - Spy1Player1: {instanceID: 0}
+  - Spy2Player1: {instanceID: 0}
+  - Spy3Player1: {instanceID: 0}
+  - playerOverall2: {instanceID: 0}
+  - CommanderPlayer2: {instanceID: 0}
+  - ArmyPlayer2: {instanceID: 0}
+  - Spy1Player2: {instanceID: 0}
+  - Spy2Player2: {instanceID: 0}
+  - Spy3Player2: {instanceID: 0}
+  - PrefabPing: {instanceID: 0}
+  - PrefabPingSpyComm: {instanceID: 0}
+  - MovementPoolSpyPlayer1: {instanceID: 0}
+  - MovementPoolSpyPlayer2: {instanceID: 0}
+  - MovementPoolArmyPlayer1: {instanceID: 0}
+  - MovementPoolArmyPlayer2: {instanceID: 0}
+  - MovementPoolCommanderPlayer1: {instanceID: 0}
+  - MovementPoolCommanderPlayer2: {instanceID: 0}
+  - UnitselectorPlayer1: {instanceID: 0}
+  - UnitselectorPlayer2: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

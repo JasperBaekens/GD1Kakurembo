@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class CameraSwitcher : MonoBehaviour
 {
+    public AudioClip TurnSwitcherNoise;
+
+
     [SerializeField]
     private Camera _mainCamera;
     [SerializeField]
@@ -23,6 +26,8 @@ public class CameraSwitcher : MonoBehaviour
 
     [SerializeField]
     private GameObject[] _toggleActiveListOnStartOfNextPlayerTurn;
+
+    private bool IsInbetweenNoisePlayed = false;
 
     // Start is called before the first frame update
     void Start()
@@ -47,6 +52,7 @@ public class CameraSwitcher : MonoBehaviour
 
         if (_currentStep == 0)
         {
+            IsInbetweenNoisePlayed = false;
             _player1.SetActive(true);
             _inBetweenScreen.SetActive(false);
             _endTurnButton.SetActive(true);
@@ -55,6 +61,7 @@ public class CameraSwitcher : MonoBehaviour
         }
         else if (_currentStep == 2)
         {
+            IsInbetweenNoisePlayed = false;
             _player1.SetActive(false);
             _inBetweenScreen.SetActive(false);
             _endTurnButton.SetActive(true);
@@ -63,6 +70,12 @@ public class CameraSwitcher : MonoBehaviour
         }
         else
         {
+            if (!IsInbetweenNoisePlayed)
+            {
+                SoundFXManager.Instance.PlaySoundFXClip(TurnSwitcherNoise, transform, 1f);
+                IsInbetweenNoisePlayed = true;
+            }
+
             _inBetweenScreen.SetActive(true);
             _endTurnButton.SetActive(false);
             _player1.SetActive(false);

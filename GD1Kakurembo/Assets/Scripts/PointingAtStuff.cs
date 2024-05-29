@@ -59,7 +59,12 @@ public class PointingAtStuff : MonoBehaviour
     private GameObject arrow2;
 
 
+    public MovementPool MovementPoolArmyPlayer1;
+    public MovementPool MovementPoolArmyPlayer2;
 
+    public MovementPool MovementPoolSpyPlayer1;
+    public MovementPool MovementPoolSpyPlayer2;
+ 
 
 
     private void Awake()
@@ -91,6 +96,9 @@ public class PointingAtStuff : MonoBehaviour
         {
             if (!_p1ShownCommander && movementPointManager.TurnCounter == 1)
             {
+                MovementPoolArmyPlayer1.MovementPoolCurrent = 0;
+                MovementPoolSpyPlayer1.MovementPoolCurrent = 0;
+
                 arrow1 = Instantiate(ArrowPointing);
                 arrow1.transform.position = movementPointManager.CommanderPlayer1.transform.position;
                 _p1ShownCommander = true;
@@ -146,6 +154,7 @@ public class PointingAtStuff : MonoBehaviour
             //turn2
             else if (movementPointManager.TurnCounter == 2 && !p1ShownArmy)
             {
+                MovementPoolSpyPlayer1.MovementPoolCurrent = 0;
                 arrow1 = Instantiate(ArrowPointing);
                 arrow1.transform.position = movementPointManager.ArmyPlayer1.transform.position;
                 ArmyExplainer.enabled = true;
@@ -183,6 +192,7 @@ public class PointingAtStuff : MonoBehaviour
 
             else if (!p1ShownPing && movementPointManager.PingsPlayer1.Count > 0 && CommanderExplainer.enabled == false && CommanderExplainer2.enabled == false && Motivation.enabled == false && MotivationFind.enabled == false && MotivationLoseTurn.enabled == false && Movement.enabled == false && MovementAmount.enabled == false && ArmyExplainer.enabled == false && SpyExplainer.enabled == false)
             {
+                
                 p1ShownPing = true;
                 PingExplainer.enabled = true;
                 PingExplainer2.enabled = true;
@@ -208,6 +218,10 @@ public class PointingAtStuff : MonoBehaviour
         {
             if (!_p2ShownCommander && movementPointManager.TurnCounter == 1)
             {
+                MovementPoolArmyPlayer2.MovementPoolCurrent = 0;
+                MovementPoolSpyPlayer2.MovementPoolCurrent = 0;
+
+                EndTurn.enabled = false;
                 arrow1 = Instantiate(ArrowPointing);
                 arrow1.transform.position = movementPointManager.CommanderPlayer2.transform.position;
                 _p2ShownCommander = true;
@@ -263,6 +277,8 @@ public class PointingAtStuff : MonoBehaviour
             //turn2
             else if (movementPointManager.TurnCounter == 2 && !p2ShownArmy)
             {
+                MovementPoolSpyPlayer2.MovementPoolCurrent = 0;
+
                 arrow1 = Instantiate(ArrowPointing);
                 arrow1.transform.position = movementPointManager.ArmyPlayer2.transform.position;
                 ArmyExplainer.enabled = true;

@@ -8,6 +8,10 @@ using UnityEngine;
 
 public class MovementPointManager : MonoBehaviour
 {
+
+    public AudioClip CommanderFoundPingAudio;
+    public AudioClip WinnerAudio;
+
     //player1
     public bool myTurn1;
     public bool previousFrameMyTurn1 = false;
@@ -149,6 +153,8 @@ public class MovementPointManager : MonoBehaviour
             CommanderPlayer1.GetComponent<CharacterProperties>().currentTile == Spy3Player2.GetComponent<CharacterProperties>().currentTile
             ))
         {
+            SoundFXManager.Instance.PlaySoundFXClip(CommanderFoundPingAudio, transform, 1f);
+
             Commander1Found = true;
             tilesToPingPlayer2.Add(CommanderPlayer1.GetComponent<CharacterProperties>().currentTile);
             tilesToPingPlayer1.Add(CommanderPlayer1.GetComponent<CharacterProperties>().currentTile);
@@ -163,6 +169,8 @@ public class MovementPointManager : MonoBehaviour
             CommanderPlayer2.GetComponent<CharacterProperties>().currentTile == Spy3Player1.GetComponent<CharacterProperties>().currentTile
             ))
         {
+
+            SoundFXManager.Instance.PlaySoundFXClip(CommanderFoundPingAudio, transform, 1f);
             Commander2Found = true;
             tilesToPingPlayer2.Add(CommanderPlayer2.GetComponent<CharacterProperties>().currentTile);
             tilesToPingPlayer1.Add(CommanderPlayer2.GetComponent<CharacterProperties>().currentTile);
@@ -290,14 +298,22 @@ public class MovementPointManager : MonoBehaviour
     }
     private void CheckWinPlayer1()
     {
-        if (ArmyPlayer1.GetComponent<CharacterProperties>().currentTile == CommanderPlayer2.GetComponent<CharacterProperties>().currentTile || motivationCurrentPlayer2 <=0 )
+        if ((ArmyPlayer1.GetComponent<CharacterProperties>().currentTile == CommanderPlayer2.GetComponent<CharacterProperties>().currentTile || motivationCurrentPlayer2 <=0) && !Player1Won)
+        {
             Player1Won = true;
+            SoundFXManager.Instance.PlaySoundFXClip(WinnerAudio, transform, 0.5f);
+        }
+
     }
 
     private void CheckWinPlayer2()
     {
-        if (ArmyPlayer2.GetComponent<CharacterProperties>().currentTile == CommanderPlayer1.GetComponent<CharacterProperties>().currentTile || motivationCurrentPlayer1 <= 0)
+        if ((ArmyPlayer2.GetComponent<CharacterProperties>().currentTile == CommanderPlayer1.GetComponent<CharacterProperties>().currentTile || motivationCurrentPlayer1 <= 0) && !Player2Won)
+        {
             Player2Won = true;
+            SoundFXManager.Instance.PlaySoundFXClip(WinnerAudio, transform, 0.5f);
+        }
+
     }
 
 
